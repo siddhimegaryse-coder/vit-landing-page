@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIT Online MBA | MegaRyse</title>
+    <meta name="description" content="Programme information for the VIT Online MBA. Download the brochure or request a call back.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .vit-hero {
+            background-image: url("vit-campus.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (max-width: 767px) {
+            .vit-hero { background-position: center top; }
+        }
+    </style>
+</head>
+<body class="vit-programme-page" data-programme="mba">
+<header class="vit-page-header">
+  <div class="vit-header-inner">
+    <a class="vit-brand-logos" href="index.html" aria-label="VIT University home"><img src="VIT-logo.jpg.jpeg" alt="VIT University" class="vit-logo"></a>
+    <nav class="vit-desktop-nav" aria-label="Main navigation">
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">PROGRAM</button><div class="vit-dropdown-menu"><a href="mba.html">MBA</a><a href="mca.html">MCA</a><a href="ms-data-science.html">MS Data Science</a></div></div>
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">CURRICULUM</button><div class="vit-dropdown-menu"><a href="mba.html#curriculum">MBA</a><a href="mca.html#curriculum">MCA</a><a href="ms-data-science.html#curriculum">MS Data Science</a></div></div>
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">CAREER</button><div class="vit-dropdown-menu"><a href="mba.html#careers">MBA</a><a href="mca.html#careers">MCA</a><a href="ms-data-science.html#careers">MS Data Science</a></div></div>
+    </nav>
+    <button id="vitMobileMenuButton" class="vit-mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="vitMobileMenu"><i class="fas fa-bars"></i></button>
+  </div>
+  <nav id="vitMobileMenu" class="vit-mobile-menu" aria-label="Mobile navigation">
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">PROGRAM</button><div class="vit-mobile-dropdown"><a href="mba.html">MBA</a><a href="mca.html">MCA</a><a href="ms-data-science.html">MS Data Science</a></div></div>
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">CURRICULUM</button><div class="vit-mobile-dropdown"><a href="mba.html#curriculum">MBA</a><a href="mca.html#curriculum">MCA</a><a href="ms-data-science.html#curriculum">MS Data Science</a></div></div>
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">CAREER</button><div class="vit-mobile-dropdown"><a href="mba.html#careers">MBA</a><a href="mca.html#careers">MCA</a><a href="ms-data-science.html#careers">MS Data Science</a></div></div>
+  </nav>
+</header>
+<section id="home" class="vit-hero text-white py-16 md:py-24">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Top Online MBA from VIT University</h1>
+      <h2 class="text-2xl md:text-3xl font-semibold mb-6">A Globally Recognised Institution</h2>
+      <div class="flex flex-wrap gap-3 mb-8">
+        <span class="bg-blue-700 px-3 py-1 rounded-full text-sm">UGC Entitled</span>
+        <span class="bg-blue-700 px-3 py-1 rounded-full text-sm">AICTE Approved</span>
+        <span class="bg-blue-700 px-3 py-1 rounded-full text-sm">2-Year MBA</span>
+        <span class="bg-blue-700 px-3 py-1 rounded-full text-sm">VIT Alumni Status</span>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <button class="bg-white text-blue-900 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300">Enquire Now<i class="fas fa-arrow-right ml-2"></i>
+        </button>
+        <button class="border-2 border-white text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"> Download Brochure </button>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+        <form id="requestForm" method="POST" novalidate>
+          <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Request Information</h3>
+          <div class="mb-4">
+            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="fullname" name="fullname" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="email" name="email" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <input type="number" placeholder="Mobile Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="mobileNumber" name="phone" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="educationLevel" name="educationLevel" required="true" >
+                                    <option value="">Education Level</option>
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="other">Other</option>
+                                </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="workExperience" name="workExperience" required="true" >
+                <option value="">Work Experience</option>
+                <option value="Still a Student">Still a Student</option>
+                <option value="Less than 5 Years">Less than 5 Years</option>
+                <option value="5-10 Years">5-10 Years</option>
+                <option value="10-15 Years">10-15 Years</option>
+                <option value="16-20 Years">16-20 Years</option>
+                <option value=">20 Years">+ 20 Years</option>
+            </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-6">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="specialisation" name="specialisation" required="true" >
+                <option value="">Preferred Specialisation</option>
+                <option value="marketing">Marketing</option>
+                <option value="hr">Human Resource</option>
+                <option value="finance">Finance</option>
+                <option value="operations">Operations</option>
+                <option value="general">General</option>
+            </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Enquire Now</button>
+        </form></div>
+    </div>
+  </div>
+  </div>
+</section>
+        <section id="about" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">About VIT University</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="vit-university.png" alt="VIT Campus" class="rounded-lg shadow-lg w-full vit-campus" />
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <p class="text-lg mb-6"> Vellore Institute of Technology (VIT) is one of India's premier institutions, known for its commitment to
+                            delivering high-quality education aligned with global standards. </p>
+                        <p class="text-lg mb-6"> VIT Online Education extends this legacy by offering flexible, accessible, and industry-relevant online programmes
+                            tailored for students and working professionals worldwide. These programmes are delivered through state-of-the-art
+                            digital infrastructure and taught by experienced VIT faculty, with a strong focus on emerging fields
+                            and regulatory compliance. </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                                <i class="fas fa-trophy text-blue-600 text-2xl mr-3"></i>
+                                <span class="font-medium">Top 10 Universities in India</span>
+                            </div>
+                            <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                                <i class="fas fa-star text-blue-600 text-2xl mr-3"></i>
+                                <span class="font-medium">QS 4-star rated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="programme" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">VIT Online MBA</h2>
+                    <h3 class="text-xl md:text-2xl text-gray-600 mb-6">MBA from India's top 10 universities</h3>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="mb-16">
+                    <p class="text-lg text-center max-w-3xl mx-auto mb-8"> Empower your career journey with the online Master of Business Administration (MBA) Programme at Vellore Institute
+                        of Technology (VIT). Designed by esteemed faculty, this programme stands as a beacon for working professionals
+                        seeking rapid upskilling. As an esteemed and affordable choice from a top-tier institute, it seamlessly merges
+                        convenience with excellence. </p>
+                    <div class="text-center">
+                        <button class="bg-blue-900 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 DownloadBrochure"> Download Programme Brochure </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <div class="text-blue-900 mb-4">
+                            <i class="fas fa-graduation-cap text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Globally Recognized Degree</h4>
+                        <p class="text-gray-600">Earn an MBA degree from VIT, ranked among India's top 10 universities and recognized worldwide.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <div class="text-blue-900 mb-4">
+                            <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Expert Faculty</h4>
+                        <p class="text-gray-600">Learn from the same renowned faculty who teach on-campus MBA programmes at VIT.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <div class="text-blue-900 mb-4">
+                            <i class="fas fa-briefcase text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Career Advancement</h4>
+                        <p class="text-gray-600">Designed for working professionals to upskill without career breaks.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <div class="text-blue-900 mb-4">
+                            <i class="fas fa-laptop text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Flexible Learning</h4>
+                        <p class="text-gray-600">Live online classes + recorded sessions to fit your schedule.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <div class="text-blue-900 mb-4">
+                            <i class="fas fa-network-wired text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Alumni Network</h4>
+                        <p class="text-gray-600">Join the prestigious VIT alumni community with 100,000+ members worldwide.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <div class="text-blue-900 mb-4">
+                            <i class="fas fa-rupee-sign text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Affordable Fees</h4>
+                        <p class="text-gray-600">Premium education at affordable fees and flexible payment options.</p>
+                    </div>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Key Recognitions</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                            <span>Ranked among Top 10 Universities in India â€“ NIRF 2024</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                            <span>QS 4-star rated overall (first in India)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                            <span>NAAC A++ accreditation</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                            <span>AACSB and ACBSP member institution</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                            <span>WES recognised</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
+                            <span>UGC Entitled and AICTE Approved MBA Degree</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Programme Highlights</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Programme Structure</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Duration:</strong> 24 Months </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-laptop text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Mode:</strong> Live Online + Recorded Sessions </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clock text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Effort:</strong> 16â€“18 hours/week </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-graduation-cap text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Eligibility:</strong> Bachelor's degree (minimum 50%; 45% for reserved category) </span>
+                            </li>                        
+                            <li class="flex items-start">
+                                <i class="fas fa-certificate text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Certification:</strong> MBA degree from VIT </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Alumni Status:</strong> Granted </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-pencil-alt text-blue-600 mt-1 mr-3"></i>
+                                <span>
+                                    <strong>Exam Mode:</strong> End-term offline assessments at multiple centers across India </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Learning Experience</h3>
+                        <p class="mb-4">VIT's Online MBA programme embraces a cutting-edge blended format, seamlessly merging the best of both worlds.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-video text-blue-600 mt-1 mr-3"></i>
+                                <span>Pre-recorded videos by VIT faculty that cater to your schedule</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chalkboard-teacher text-blue-600 mt-1 mr-3"></i>
+                                <span>Weekly live sessions with VIT faculty for real-time interaction</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-question-circle text-blue-600 mt-1 mr-3"></i>
+                                <span>Doubt clearing by industry professionals and subject matter experts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-book text-blue-600 mt-1 mr-3"></i>
+                                <span>Curriculum includes 50+ real-world case studies from Ivey, ISB-Harvard, etc.</span>
+                            </li>
+                        </ul>
+                        <h4 class="text-lg font-bold mt-6 mb-3 text-blue-900">Sample Case Studies:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Paper Boat: Branding Delightful Nostalgia</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Zomato: Hyperlocal Battle for Online Food Delivery</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ITC: Stock Price Volatility</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Ola: The Digital Marketing Strategy</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Epigamia: Chronicle of an Emerging Brand</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="curriculum" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Curriculum and Specialisations</h2>
+                    <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                <p class="text-lg text-center max-w-3xl mx-auto mb-12"> The two-year MBA programme follows a structured curriculum that provides core business knowledge, practical application,
+                    and opportunities for domain specialisation. </p>
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Curriculum Overview</h3>
+                    <div class="relative">
+                        <div class="timeline-item mb-16">
+                            <div class="bg-blue-900 text-white rounded-lg p-6 max-w-2xl mx-auto relative">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-900 w-8 h-8 rounded-full flex items-center justify-center">
+                                    <span class="font-bold">1</span>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">Year One</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Principles of Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Managerial Economics</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Financial Accounting</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Data Analytics</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Business Communication</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Human Resource Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Marketing Management</span>
+                                    </div>
+                                      <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Operations Management</span>
+                                    </div>
+                                      <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Strategic Management</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Financial Management</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Year 2 -->
+                        <div class="timeline-item">
+                            <div class="bg-blue-800 text-white rounded-lg p-6 max-w-2xl mx-auto relative">
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-800 w-8 h-8 rounded-full flex items-center justify-center">
+                                    <span class="font-bold">2</span>
+                                </div>
+                                <h4 class="text-xl font-bold mb-4">Year Two</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Elective-1 to 7  (choose specialisation)</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-200 mt-1 mr-2"></i>
+                                        <span>Final Project</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Specialisations Offered & Electives</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <div class="specialization-card bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center">
+                            <i class="fas fa-bullhorn text-4xl text-blue-600 mb-4 hover:text-white"></i>
+                            <h4 class="text-xl font-bold mb-2">Marketing</h4>
+                            <p class="text-gray-600 hover:text-white">Consumer Behaviour, Digital Marketing, Retail Management, Service Marketing, and Brand Management for the Digital Era.</p>
+                        </div>
+                        <div class="specialization-card bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center">
+                            <i class="fas fa-users text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2">Human Resource</h4>
+                            <p class="text-gray-600 hover:text-white">Knowledge Management, Leadership and Team Building, Organisational Change and Development, Strategic HRM, and HR Analytics.</p>
+                        </div>
+                        <div class="specialization-card bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center">
+                            <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2">Finance</h4>
+                            <p class="text-gray-600 hover:text-white">Indian Financial System, Security Analysis and Portfolio Management, Costing Methods and Techniques, Applied Fintech for Business, and Wealth Tech and Lending Tech.</p>
+                        </div>
+                        <div class="specialization-card bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center">
+                            <i class="fas fa-warehouse text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2">Operations and supply chain management</h4>
+                            <p class="text-gray-600 hover:text-white">Logistic and Supply Chain Management, Material Management, Project Management, Quality Management, and Supply Chain Analytics.</p>
+                        </div>
+                        <div class="specialization-card bg-white p-6 rounded-xl shadow-md border border-gray-200 text-center">
+                            <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2">General Management</h4>
+                            <p class="text-gray-600 hover:text-white">Knowledge Management, Digital Marketing, Indian Financial System, Leadership and Team Building, and Legal Aspects of Business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="careers" class="py-16 bg-blue-900 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Become a Proud Member of the VIT Alumni Network</h2>
+                    <div class="w-20 h-1 bg-white mx-auto"></div>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg text-center mb-8 text-white"> On successful completion of the MBA programme, learners gain access to the VIT Alumni Association and its privileges,
+                        including: </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                        <div class="bg-blue-800 p-6 rounded-lg">
+                            <i class="fas fa-calendar-check text-3xl mb-4 text-blue-300"></i>
+                            <h4 class="text-xl font-bold mb-2">Alumni Meets</h4>
+                            <p class="text-white">Invitations to alumni meets at VIT Vellore and regional chapters worldwide.</p>
+                        </div>
+                        <div class="bg-blue-800 p-6 rounded-lg">
+                            <i class="fas fa-newspaper text-3xl mb-4 text-blue-300"></i>
+                            <h4 class="text-xl font-bold mb-2">Community Updates</h4>
+                            <p class="text-white">Access to alumni newsletters and community updates.</p>
+                        </div>
+                        <div class="bg-blue-800 p-6 rounded-lg">
+                            <i class="fas fa-network-wired text-3xl mb-4 text-blue-300"></i>
+                            <h4 class="text-xl font-bold mb-2">Networking</h4>
+                            <p class="text-white">Professional networking with batchmates, seniors, and juniors.</p>
+                        </div>
+                        <div class="bg-blue-800 p-6 rounded-lg">
+                            <i class="fas fa-briefcase text-3xl mb-4 text-blue-300"></i>
+                            <h4 class="text-xl font-bold mb-2">Job Board</h4>
+                            <p class="text-white">Access to alumni job board and achievements showcase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="admission" class="py-16 bg-gray-50">
+          
+        <div class="container mx-auto px-4">
+             
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Convinient Batch Options</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                                <i class="fas fa-calendar-week text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Weekday Batch</h4>
+                                </div>
+                            </div>
+                            <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                                <i class="fas fa-calendar-day text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-bold mb-1">Weekend Batch</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4">Please Note: The session timings for the programme may be subject to change.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-blue-900">Career Support</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-linkedin text-blue-600 mt-1 mr-3"></i>
+                                <span>LinkedIn profile building</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-file-alt text-blue-600 mt-1 mr-3"></i>
+                                <span>Resume development and interview preparation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-briefcase text-blue-600 mt-1 mr-3"></i>
+                                <span>Job placement assistance (available for Indian residents with 0â€“5 years experience)</span>
+                            </li>
+                        </ul>
+                        <p class="text-sm text-gray-500 mt-4">Note: VIT is not directly involved in job placement services / Career services and makes no guarantees.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Fees &amp; Payment Schedule</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                        <div>
+                            <h4 class="text-lg font-bold mb-3">Total Programme Fee:</h4>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="text-2xl font-bold text-blue-900">â‚¹1,80,000</p>
+                                <p class="text-sm">(Inclusive of all taxes)</p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-3">Payment Options:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span>One-time payment (discount available)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span>Semester-wise installments</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span>EMI options available</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-center text-gray-600">
+                        <strong>Refund Policy:</strong> As per university norms based on withdrawal timelines.
+                    </p>
+                </div>
+            </div>
+               <div class="mt-12 text-center">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition duration-300 DownloadBrochure">Speak to a Counsellor</button>
+            </div>
+        </section>
+        <section id="contact" class="py-16 gradient-bg text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Career?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto text-white">Join India's premier online MBA programme from VIT University and unlock new career opportunities.</p>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 text-lg DownloadBrochure ">
+                    Enquire Now
+                        <!-- <i class="fas fa-arrow-right ml-2"></i> -->
+                    </button>
+                    <button class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 text-lg DownloadBrochure">
+                    Speak to a Counsellor </button>
+                    <button class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-700 transition duration-300 text-lg DownloadBrochure">
+                    Download Brochure </button>
+                </div>
+                <div class="max-w-4xl mx-auto bg-blue-800 bg-opacity-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-phone-alt text-2xl mb-2"></i>
+                            <span class="font-medium">Admission Helpline</span>
+                            <span id="contactNumber"></span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div><h4 class="text-lg font-bold mb-4">Programmes</h4></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="mba.html">Online MBA</a></h3></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="mca.html">Online MCA</a></h3></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="ms-data-science.html">Online M.Sc. in Data Science</a></h3></div>
+    </div>
+    <div class="border-t border-gray-800 mt-10 pt-6"><p class="text-gray-400 text-xs">Disclaimer: We are a listing platform that aggregates and displays information about various institutions and their programmes. Programme details are sourced from the respective institution and brochure. Please confirm current fees, eligibility and availability with the official university sources.</p></div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('#mainNav .dropdown-toggle, .vit-desktop-nav .vit-dropdown-toggle, .vit-mobile-toggle').forEach(function(toggle) {
+  toggle.addEventListener('click', function() {
+    const group = toggle.closest('.nav-dropdown, .vit-nav-dropdown, .vit-mobile-nav-group');
+    if (!group) return;
+    const isOpen = group.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+const menuButton=document.getElementById('menuButton');
+const mainNav=document.getElementById('mainNav');
+if(menuButton&&mainNav){menuButton.addEventListener('click',function(){const isOpen=mainNav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));});mainNav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){mainNav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');});});}
+const mobileMenuButton=document.getElementById('vitMobileMenuButton');
+const mobileMenu=document.getElementById('vitMobileMenu');
+if(mobileMenuButton&&mobileMenu){mobileMenuButton.addEventListener('click',function(){const isOpen=mobileMenu.classList.toggle('open');mobileMenuButton.setAttribute('aria-expanded',String(isOpen));});mobileMenu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){mobileMenu.classList.remove('open');mobileMenuButton.setAttribute('aria-expanded','false');});});}
+const year=document.getElementById('year'); if(year) year.textContent=new Date().getFullYear();
+
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver(function(entries,observer){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+    });
+  },{threshold:0.08});
+  reveals.forEach(function(element){revealObserver.observe(element);});
+}else{
+  reveals.forEach(function(element){element.classList.add('visible');});
+}
+
+document.querySelectorAll('#requestForm').forEach(function(form){
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    const modal=document.getElementById('brochureModalBackdrop');
+    if(modal){
+      const firstName=modal.querySelector('#brochureFirstName');
+      const open=modal.querySelector('.brochure-modal');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      if(firstName) firstName.focus();
+    }
+  });
+});
+</script>
+<script src="brochure-enquiry.js"></script>
+</body>
+</html>

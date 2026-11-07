@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIT Online MCA | MegaRyse</title>
+    <meta name="description" content="Programme information for the VIT Online MCA. Download the brochure or request a call back.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .vit-hero {
+            background-image: url("vit-campus.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (max-width: 767px) {
+            .vit-hero { background-position: center top; }
+        }
+    </style>
+</head>
+<body class="vit-programme-page" data-programme="mca">
+<header class="vit-page-header">
+  <div class="vit-header-inner">
+    <a class="vit-brand-logos" href="index.html" aria-label="VIT University home"><img src="VIT-logo.jpg.jpeg" alt="VIT University" class="vit-logo"></a>
+    <nav class="vit-desktop-nav" aria-label="Main navigation">
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">PROGRAM</button><div class="vit-dropdown-menu"><a href="mba.html">MBA</a><a href="mca.html">MCA</a><a href="ms-data-science.html">MS Data Science</a></div></div>
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">CURRICULUM</button><div class="vit-dropdown-menu"><a href="mba.html#curriculum">MBA</a><a href="mca.html#curriculum">MCA</a><a href="ms-data-science.html#curriculum">MS Data Science</a></div></div>
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">CAREER</button><div class="vit-dropdown-menu"><a href="mba.html#careers">MBA</a><a href="mca.html#careers">MCA</a><a href="ms-data-science.html#careers">MS Data Science</a></div></div>
+    </nav>
+    <button id="vitMobileMenuButton" class="vit-mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="vitMobileMenu"><i class="fas fa-bars"></i></button>
+  </div>
+  <nav id="vitMobileMenu" class="vit-mobile-menu" aria-label="Mobile navigation">
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">PROGRAM</button><div class="vit-mobile-dropdown"><a href="mba.html">MBA</a><a href="mca.html">MCA</a><a href="ms-data-science.html">MS Data Science</a></div></div>
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">CURRICULUM</button><div class="vit-mobile-dropdown"><a href="mba.html#curriculum">MBA</a><a href="mca.html#curriculum">MCA</a><a href="ms-data-science.html#curriculum">MS Data Science</a></div></div>
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">CAREER</button><div class="vit-mobile-dropdown"><a href="mba.html#careers">MBA</a><a href="mca.html#careers">MCA</a><a href="ms-data-science.html#careers">MS Data Science</a></div></div>
+  </nav>
+</header>
+<section id="home" class="vit-hero text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Master of Computer Applications from VIT</h1>
+                    <h2 class="text-xl md:text-2xl font-medium mb-6">Online MCA - A Pathway to Career Excellence</h2>
+                    <p class="text-lg mb-8 text-white">Explore VIT's online MCA programme for a structured postgraduate route into computer applications and software technology. Programme duration, approval status, eligibility, fees and current electives should be confirmed against the official prospectus and admission portal before application.</p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <button class="bg-white text-blue-800 px-6 py-3 rounded-md font-bold hover:bg-gray-100 transition duration-300">Enquire Now</button>
+                        <button class="bg-transparent border-2 border-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-blue-800 transition duration-300">Download Brochure</button>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-award text-yellow-400 mr-2 text-2xl"></i>
+                        <span class="text-sm">Verify current recognition, ranking and programme approvals for the selected intake</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                
+                        
+        <form id="requestForm" method="POST" novalidate>
+          <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Get Program Details</h3>
+          <div class="mb-4">
+            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="fullname" name="fullname" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="email" name="email" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <input type="number" placeholder="Mobile Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="mobileNumber" name="phone" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="educationLevel" name="educationLevel" required="true" >
+                                    <option value="">Education Level</option>
+
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="other">Other</option>
+                                </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="workExperience" name="workExperience" required="true" >
+                <option value="">Work Experience</option>
+                <option value="Still a Student">Still a Student</option>
+                <option value="Less than 5 Years">Less than 5 Years</option>
+                <option value="5-10 Years">5-10 Years</option>
+                <option value="10-15 Years">10-15 Years</option>
+                <option value="16-20 Years">16-20 Years</option>
+                <option value=">20 Years">+ 20 Years</option>
+            </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-6">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="specialisation" name="specialisation" >
+                <option value="">Preferred Specialisation (if offered)</option>
+                <option value="Not sure">Not sure / confirm availability</option>
+                <option value="Artificial intelligence (AI) & Machine learning">Artificial intelligence (AI) & Machine learning</option>
+                <option value="Cyber security">Cyber security</option>
+            </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Enquire Now</button>
+        </form></div>
+                    </div>
+        
+        </div>
+    </section>
+
+    <!-- About VIT Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">About VIT</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="vit-university.png" alt="VIT Campus" class="rounded-lg shadow-xl w-full vit-campus">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Vellore Institute of Technology</h3>
+                    <p class="text-gray-600 mb-4">Vellore Institute of Technology (VIT) is one of India's premier institutions, known for its commitment to delivering high-quality education aligned with global standards.</p>
+                    <p class="text-gray-600 mb-6">VIT Online Education extends this legacy by offering flexible, accessible, and industry-relevant online programmes tailored for students and working professionals worldwide. These programmes are delivered through state-of-the-art digital infrastructure and taught by experienced VIT faculty, with a strong focus on emerging fields and regulatory compliance.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                            <span>Current ranking and accreditation details to be confirmed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                            <span>NAAC A++ Accredited</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose VIT MCA -->
+    <section id="programme" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Why Choose VIT MCA</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-xl text-gray-600 mt-4">Pursue Your MCA from a Globally Recognised University</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md feature-card transition duration-300 border border-gray-200 hover:border-blue-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-university text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Recognition Status</h3>
+                    <p class="text-gray-600">Confirm current UGC entitlement, approval status and applicability for the selected admission cycle.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md feature-card transition duration-300 border border-gray-200 hover:border-blue-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-trophy text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">University Information</h3>
+                    <p class="text-gray-600">Check the latest official ranking and institutional information before citing it.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md feature-card transition duration-300 border border-gray-200 hover:border-blue-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-laptop-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Virtual Programming Lab</h3>
+                    <p class="text-gray-600">V-Propel with automatic code validation for hands-on practice.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md feature-card transition duration-300 border border-gray-200 hover:border-blue-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-briefcase text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Flexible for Professionals</h3>
+                    <p class="text-gray-600">Live + recorded sessions to fit your work schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Details -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">A Career-Defining MCA Programme from VIT</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <p class="text-gray-600 mb-6">VIT's Master of Computer Applications (MCA) programme is designed for aspiring IT professionals and software developers seeking to strengthen their technical capabilities and advance their careers. Offered in a blended format with both live and self-paced components, this two-year postgraduate degree provides a rigorous foundation in software engineering, emerging technologies, and hands-on tools for practical application.</p>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Program Highlights</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Duration: <span class="font-semibold">To be confirmed for the current intake</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Mode: <span class="font-semibold">Live Online+ Recorded Sessions</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Weekly effort: <span class="font-semibold">Confirm the current study-time requirement</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Certificate: <span class="font-semibold">VIT MCA Degree</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Alumni Status: <span class="font-semibold">Granted</span></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Exam mode: <span class="font-semibold">Verify the current examination format and centers</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Students learning" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-4">Comprehensive Online Learning Model</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-video text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Live online classes by VIT faculty</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-question-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Doubt-clearing sessions with subject matter experts</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-play-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Pre-recorded, high-quality video content</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-laptop text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Programming practice via V-Propel lab</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Final certification and graduation on successful completion</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Curriculum Designed for the Future IT Professional</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-xl text-gray-600 mt-4">Comprehensive coverage of core concepts and emerging technologies</p>
+            </div>
+            
+            <div class="mb-8 border-b border-gray-200">
+                <div class="flex flex-wrap -mb-px space-x-8" id="curriculum-tabs">
+                    <button class="curriculum-tab active py-4 px-1 text-sm font-medium text-center border-b-2 border-transparent" onclick="openTab(event, 'core')" id="defaultOpen">Core Subjects</button>
+                    <button class="curriculum-tab py-4 px-1 text-sm font-medium text-center border-b-2 border-transparent" onclick="openTab(event, 'electives')">Electives</button>
+                    <button class="curriculum-tab py-4 px-1 text-sm font-medium text-center border-b-2 border-transparent" onclick="openTab(event, 'specializations')">Specializations</button>
+                </div>
+            </div>
+
+            <div id="core" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-code mr-2 text-blue-600"></i>
+                            Python Programming
+                        </h3>
+                       
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-project-diagram mr-2 text-blue-600"></i>
+                            Data Structures and Algorithms
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-database mr-2 text-blue-600"></i>
+                            Database Systems
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-desktop mr-2 text-blue-600"></i>
+                            Operating Systems
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-network-wired mr-2 text-blue-600"></i>
+                            Computer Networks
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fab fa-java mr-2 text-blue-600"></i>
+                            Programming in Java
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-cogs mr-2 text-blue-600"></i>
+                            Software Engineering
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-chart-bar mr-2 text-blue-600"></i>
+                            Statistics for Data Science
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-chart-bar mr-2 text-blue-600"></i>
+                            Discrete Mathematical Structures
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="electives" class="tab-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-robot mr-2 text-blue-600"></i>
+                            Artificial Intelligence
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-brain mr-2 text-blue-600"></i>
+                            Machine Learning
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-shield-alt mr-2 text-blue-600"></i>
+                            Cyber Security
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-cubes mr-2 text-blue-600"></i>
+                            Blockchain Technologies
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-mobile-alt mr-2 text-blue-600"></i>
+                            Mobile Application Development
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-vr-cardboard mr-2 text-blue-600"></i>
+                            Virtual and Augmented Reality
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-digging mr-2 text-blue-600"></i>
+                            Data Mining Techniques
+                        </h3>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-server mr-2 text-blue-600"></i>
+                            Big Data Analytics
+                        </h3>
+                    </div>
+
+                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-file-code mr-2 text-blue-600"></i>
+                            Software Quality Assurance and Reliability
+                        </h3>
+                    </div>
+
+                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-laptop-code mr-2 text-blue-600"></i>
+                            Computer Architecture
+                        </h3>
+                    </div>
+
+                     <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-magnifying-glass mr-2 text-blue-600"></i>
+                            Cyber Forensics
+                        </h3>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="specializations" class="tab-content hidden">
+                <div class="text-center mb-8">
+                    <p class="text-gray-600">The availability of these tracks must be confirmed for the current MCA intake.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="specialization-chip bg-blue-50 text-blue-800 px-6 py-3 rounded-full font-medium cursor-pointer">
+                        Artificial Intelligence (AI) and Machine Learning
+                    </div>
+                    <div class="specialization-chip bg-blue-50 text-blue-800 px-6 py-3 rounded-full font-medium cursor-pointer">
+                        Cyber Security
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600">Final assessment via end-term examinations conducted offline at centers across India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects and Practical Learning -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Projects and Practical Learning</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Programming Practice</h3>
+                    <p class="text-gray-600">Look for structured coding assignments and virtual lab access; confirm the exact platform and tools in the current programme prospectus.</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Applied Projects</h3>
+                    <p class="text-gray-600">A postgraduate MCA curriculum commonly includes practical assignments and a project or capstone. Confirm the current project format, submission requirements and credits.</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Assessment</h3>
+                    <p class="text-gray-600">Examination, lab and project assessment formats should be verified for the selected intake before enrolment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Align Your MCA with Corporate Needs</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="mb-10">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div class="p-8">
+                        <p class="text-gray-600 mb-6">An MCA may help learners build knowledge for a range of technology roles. Employment outcomes depend on the learner's skills, experience and the prevailing job market; no career or placement outcome is guaranteed.</p>
+                        
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Top Job Roles</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Software Developer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Full Stack Engineer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Application Architect</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">System Software Developer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Web and Mobile App Developer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">QA Engineer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-blue-600 mr-2"></i>
+                                <span class="text-gray-700">Cybersecurity Specialist</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Relevant Sectors</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">IT Services</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">E-Commerce</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telecom</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">BFSI</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">EdTech</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Engineering</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Healthcare</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Manufacturing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <div class="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-8">
+                <h3 class="text-xl font-bold text-blue-800 mb-4">Career Support</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-linkedin text-blue-600 text-2xl mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold mb-1">LinkedIn Profile Building</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-file-alt text-blue-600 text-2xl mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold mb-1">Resume development and interview preparation</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-handshake text-blue-600 text-2xl mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="font-bold mb-1">Career-support services, where offered, should be confirmed for the current intake</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-sm text-gray-500">
+                    <p><i class="fas fa-info-circle mr-1"></i> Note: VIT is not directly involved in job placement services / Career services and makes no guarantees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Eligibility Criteria</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-8 h-full">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Academic Requirements</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Current academic eligibility varies by admission cycle. Confirm acceptable degrees, minimum marks, mathematics requirements and category concessions in the official prospectus.</span>
+                            </li>
+                            <b><center>OR</center></b>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Do not rely on an unverified eligibility rule. Request a written eligibility checklist from the official VIT admissions source for your qualification.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 h-full">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Best Suited For</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-user-tie text-blue-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Early to senior-level software developers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exchange-alt text-blue-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Professionals aiming to transition into advanced tech roles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-user-graduate text-blue-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Candidates seeking academic progression in AI, ML, Cybersecurity, etc.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-briefcase text-blue-600 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Working professionals looking for career flexibility and upskilling</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Fees & Payment Schedule</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <div class="bg-blue-800 text-white p-6">
+                        <h3 class="text-xl font-bold">Total Programme Fee</h3>
+                        <p class="text-2xl mt-2 text-white">Fee to be confirmed</p>
+                        <p class="text-blue-200 mt-2">Tuition, registration, examination and payment-plan details vary by intake and must be verified from the official fee schedule.</p>
+                    </div>
+                    <div class="p-6">
+                        <p><i class="fas fa-info-circle mr-1"></i> Refund Policy: As per university norms based on withdrawal timelines.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition duration-300 DownloadBrochure">View Payment Plans</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section id="admission" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Batch and Timetable Options</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold flex items-center mb-2">
+                            <i class="fas fa-calendar-week mr-2 text-blue-600"></i>
+                            Weekday Batch
+                        </h4>
+                        <p class="text-gray-600 bg-white p-4 rounded-md">Monday to Friday</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold flex items-center mb-2">
+                            <i class="fas fa-calendar-day mr-2 text-blue-600"></i>
+                            Weekend Batch
+                        </h4>
+                        <p class="text-gray-600 bg-white p-4 rounded-md">Saturday and Sunday</p>
+                    </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-500">
+                    <p><i class="fas fa-info-circle mr-1"></i> Please Note: The session timings for the programme may be subject to change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Frequently Asked Questions -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="space-y-4">
+                <details class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                    <summary class="font-bold text-blue-900 cursor-pointer">What is the current duration of the Online MCA?</summary>
+                    <p class="text-gray-600 mt-3">The duration should be confirmed in the official prospectus for the current admission cycle.</p>
+                </details>
+                <details class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                    <summary class="font-bold text-blue-900 cursor-pointer">Which qualifications are eligible?</summary>
+                    <p class="text-gray-600 mt-3">Eligibility rules, minimum marks, mathematics requirements and category concessions must be confirmed from official VIT admissions information.</p>
+                </details>
+                <details class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                    <summary class="font-bold text-blue-900 cursor-pointer">Are specialisations currently offered?</summary>
+                    <p class="text-gray-600 mt-3">Specialisation availability may change by intake. Verify the exact tracks and related subjects before selecting a preference.</p>
+                </details>
+                <details class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                    <summary class="font-bold text-blue-900 cursor-pointer">Does the programme guarantee a job or salary?</summary>
+                    <p class="text-gray-600 mt-3">No. Career outcomes depend on individual skills, experience and market conditions. Any career support offering should be verified with the university and programme provider.</p>
+                </details>
+                <details class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                    <summary class="font-bold text-blue-900 cursor-pointer">How much is the programme fee?</summary>
+                    <p class="text-gray-600 mt-3">Request the complete current fee schedule, including tuition, registration, examination and other charges, directly from the official programme source.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+     <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-800 text-white p-8">
+                        <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Career?</h3>
+                        <p class="mb-6 text-blue-100">Begin your journey to an exciting career in IT with VIT's Online MCA programme.</p>
+                        <div class="space-y-4">
+                          <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3 text-blue-300"></i>
+                                <div>
+                                    <h4 class="font-bold">Admission Helpline</h4>
+                                    <a class="text-blue-200 hover:text-white" id="contactNumber"></a>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                     
+                        <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                            <button class="bg-transparent border border-blue-600 text-blue-600 px-6 py-2 rounded-md font-bold hover:bg-blue-50 w-60 DownloadBrochure">Enquire Now</button>
+                            <button class="bg-transparent border border-blue-600 text-blue-600 px-6 py-2 rounded-md font-bold hover:bg-blue-50 w-60 DownloadBrochure">Speak to Counsellor</button>
+                            <button class="bg-transparent border border-blue-600 text-blue-600 px-6 py-2 rounded-md font-bold hover:bg-blue-50 w-60 DownloadBrochure">Download Brochure</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+      
+    <!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div><h4 class="text-lg font-bold mb-4">Programmes</h4></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="mba.html">Online MBA</a></h3></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="mca.html">Online MCA</a></h3></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="ms-data-science.html">Online M.Sc. in Data Science</a></h3></div>
+    </div>
+    <div class="border-t border-gray-800 mt-10 pt-6"><p class="text-gray-400 text-xs">Disclaimer: We are a listing platform that aggregates and displays information about various institutions and their programmes. Programme details are sourced from the respective institution and brochure. Please confirm current fees, eligibility and availability with the official university sources.</p></div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('#mainNav .dropdown-toggle, .vit-desktop-nav .vit-dropdown-toggle, .vit-mobile-toggle').forEach(function(toggle) {
+  toggle.addEventListener('click', function() {
+    const group = toggle.closest('.nav-dropdown, .vit-nav-dropdown, .vit-mobile-nav-group');
+    if (!group) return;
+    const isOpen = group.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+const menuButton=document.getElementById('menuButton');
+const mainNav=document.getElementById('mainNav');
+if(menuButton&&mainNav){menuButton.addEventListener('click',function(){const isOpen=mainNav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));});mainNav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){mainNav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');});});}
+const mobileMenuButton=document.getElementById('vitMobileMenuButton');
+const mobileMenu=document.getElementById('vitMobileMenu');
+if(mobileMenuButton&&mobileMenu){mobileMenuButton.addEventListener('click',function(){const isOpen=mobileMenu.classList.toggle('open');mobileMenuButton.setAttribute('aria-expanded',String(isOpen));});mobileMenu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){mobileMenu.classList.remove('open');mobileMenuButton.setAttribute('aria-expanded','false');});});}
+const year=document.getElementById('year'); if(year) year.textContent=new Date().getFullYear();
+
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver(function(entries,observer){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+    });
+  },{threshold:0.08});
+  reveals.forEach(function(element){revealObserver.observe(element);});
+}else{
+  reveals.forEach(function(element){element.classList.add('visible');});
+}
+
+document.querySelectorAll('#requestForm').forEach(function(form){
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    const modal=document.getElementById('brochureModalBackdrop');
+    if(modal){
+      const firstName=modal.querySelector('#brochureFirstName');
+      const open=modal.querySelector('.brochure-modal');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      if(firstName) firstName.focus();
+    }
+  });
+});
+</script>
+<script src="brochure-enquiry.js"></script>
+</body>
+</html>

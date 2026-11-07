@@ -27,7 +27,7 @@
 
     const programmeNames = { mba: 'MBA', mca: 'MCA', msds: 'MS Data Science' };
     const brochureFiles = { mba: 'mba-brochure.pdf', mca: 'mca-brochure.pdf', msds: 'msds-brochure.pdf' };
-    const brochureBase = new URL('../brochures/', document.currentScript.src).href;
+    const brochureBase = new URL('./', document.currentScript.src).href;
 
     // Remember UTM parameters for the visit, so they survive moving from the home page to a programme page.
     const utm = {};
@@ -42,7 +42,7 @@
 
     async function sendToSalesforce(data) {
         if (!SALESFORCE.oid || SALESFORCE.oid.indexOf('REPLACE_') === 0) {
-            console.error('Salesforce org ID is not set in assets/js/brochure-enquiry.js');
+            console.error('Salesforce org ID is not set in brochure-enquiry.js');
             throw new Error('This form is not connected to Salesforce yet.');
         }
         const params = new URLSearchParams();

@@ -235,7 +235,7 @@ nav a[aria-current="page"] { color:var(--yellow); }
       rgba(0,50,116,.98) 0%,
       rgba(0,50,116,.88) 48%,
       rgba(0,50,116,.28) 100%),
-    url("assets/images/vit-university.png")
+    url("vit-university.png")
     center/cover no-repeat;
 }
 
@@ -841,7 +841,7 @@ footer nav a { text-decoration:none; }
           isolation: isolate;
           min-height: 620px;
           overflow: hidden;
-          background-image: url("assets/images/vit-campus.jpeg");
+          background-image: url("vit-campus.jpeg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -1181,7 +1181,7 @@ footer nav a { text-decoration:none; }
             isolation: isolate;
             min-height: 620px;
             overflow: hidden;
-            background-image: url("assets/images/vit-campus.jpeg");
+            background-image: url("vit-campus.jpeg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -1466,7 +1466,7 @@ footer nav a { text-decoration:none; }
             isolation: isolate;
             min-height: 620px;
             overflow: hidden;
-            background-image: url("assets/images/vit-campus.jpeg");
+            background-image: url("vit-campus.jpeg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
