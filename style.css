@@ -1106,7 +1106,7 @@ footer nav a { text-decoration:none; }
                 padding: 12px 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer;
             }
             .vit-mobile-menu .vit-mobile-toggle::after { content: "+"; color: #1d4ed8; font-size: 18px; }
-            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "âˆ’"; }
+            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "\2212"; }
             .vit-mobile-menu .vit-mobile-dropdown {
                 max-height: 0; overflow: hidden; display: flex; flex-direction: column;
                 padding: 0 8px; background: #f8fafc; border-radius: 6px;
@@ -1401,7 +1401,7 @@ footer nav a { text-decoration:none; }
                 padding: 12px 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer;
             }
             .vit-mobile-menu .vit-mobile-toggle::after { content: "+"; color: #1d4ed8; font-size: 18px; }
-            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "âˆ’"; }
+            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "\2212"; }
             .vit-mobile-menu .vit-mobile-dropdown {
                 max-height: 0; overflow: hidden; display: flex; flex-direction: column;
                 padding: 0 8px; background: #f8fafc; border-radius: 6px;
@@ -1700,7 +1700,7 @@ footer nav a { text-decoration:none; }
                 padding: 12px 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer;
             }
             .vit-mobile-menu .vit-mobile-toggle::after { content: "+"; color: #1d4ed8; font-size: 18px; }
-            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "âˆ’"; }
+            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "\2212"; }
             .vit-mobile-menu .vit-mobile-dropdown {
                 max-height: 0; overflow: hidden; display: flex; flex-direction: column;
                 padding: 0 8px; background: #f8fafc; border-radius: 6px;
