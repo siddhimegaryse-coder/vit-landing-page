@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VIT M.Sc. in Data Science | MegaRyse</title>
+    <meta name="description" content="Programme information for the VIT M.Sc. in Data Science. Download the brochure or request a call back.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .vit-hero {
+            background-image: url("../assets/images/vit-campus.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (max-width: 767px) {
+            .vit-hero { background-position: center top; }
+        }
+    </style>
+</head>
+<body class="vit-programme-page" data-programme="msds">
+<header class="vit-page-header">
+  <div class="vit-header-inner">
+    <a class="vit-brand-logos" href="../" aria-label="VIT University home"><img src="../assets/images/VIT-logo.jpg.jpeg" alt="VIT University" class="vit-logo"></a>
+    <nav class="vit-desktop-nav" aria-label="Main navigation">
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">PROGRAM</button><div class="vit-dropdown-menu"><a href="../mba/">MBA</a><a href="../mca/">MCA</a><a href="../ms-data-science/">MS Data Science</a></div></div>
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">CURRICULUM</button><div class="vit-dropdown-menu"><a href="../mba/#curriculum">MBA</a><a href="../mca/#curriculum">MCA</a><a href="../ms-data-science/#curriculum">MS Data Science</a></div></div>
+      <div class="vit-nav-dropdown"><button class="vit-dropdown-toggle" type="button" aria-expanded="false">CAREER</button><div class="vit-dropdown-menu"><a href="../mba/#careers">MBA</a><a href="../mca/#careers">MCA</a><a href="../ms-data-science/#careers">MS Data Science</a></div></div>
+    </nav>
+    <button id="vitMobileMenuButton" class="vit-mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="vitMobileMenu"><i class="fas fa-bars"></i></button>
+  </div>
+  <nav id="vitMobileMenu" class="vit-mobile-menu" aria-label="Mobile navigation">
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">PROGRAM</button><div class="vit-mobile-dropdown"><a href="../mba/">MBA</a><a href="../mca/">MCA</a><a href="../ms-data-science/">MS Data Science</a></div></div>
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">CURRICULUM</button><div class="vit-mobile-dropdown"><a href="../mba/#curriculum">MBA</a><a href="../mca/#curriculum">MCA</a><a href="../ms-data-science/#curriculum">MS Data Science</a></div></div>
+    <div class="vit-mobile-nav-group"><button class="vit-mobile-toggle" type="button" aria-expanded="false">CAREER</button><div class="vit-mobile-dropdown"><a href="../mba/#careers">MBA</a><a href="../mca/#careers">MCA</a><a href="../ms-data-science/#careers">MS Data Science</a></div></div>
+  </nav>
+</header>
+<section id="home" class="vit-hero text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeInUp">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Transform Your Professional Journey with VIT's Online M.Sc. in Data Science
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Explore the VIT M.Sc. in Data Science programme, with flexible online learning and a curriculum focused on data analysis, analytics and computing.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-white text-blue-700 px-6 py-3 rounded-md hover:bg-blue-50 font-semibold transition-colors duration-300">
+                            Apply Now
+                        </button>
+                        <button class="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-700 font-semibold transition-colors duration-300">
+                            Speak to a Counsellor
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animate-fadeInUp" style="animation-delay: 0.2s;">
+                    
+                    <form id="requestForm" method="POST" novalidate>
+          <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Get Course Details</h3>
+          <div class="mb-4">
+            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="fullname" name="fullname" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="email" name="email" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <input type="number" placeholder="Mobile Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="mobileNumber" name="phone" required="true" />
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="educationLevel" name="educationLevel" required="true" >
+                                    <option value="">Education Level</option>
+                                    
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="other">Other</option>
+                                </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <div class="mb-4">
+            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 input-color" id="workExperience" name="workExperience" required="true" >
+                <option value="">Work Experience</option>
+                <option value="Still a Student">Still a Student</option>
+                <option value="Less than 5 Years">Less than 5 Years</option>
+                <option value="5-10 Years">5-10 Years</option>
+                <option value="10-15 Years">10-15 Years</option>
+                <option value="16-20 Years">16-20 Years</option>
+                <option value=">20 Years">+ 20 Years</option>
+            </select>
+            <p class="error-message" style="display:none;"></p>
+          </div>
+          <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Request Callback</button>
+        </form></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Data Science Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Why Choose a Career in Data Science?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Data is the new capital of the global economy. A career in data science ensures you stay at the centre of decision-making, operational efficiency and innovation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transition-all duration-300 card-hover">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Growing Demand</h3>
+                    <p class="text-gray-600">Explore data science roles across technology, finance, healthcare and other sectors. Current opportunities should be confirmed independently.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transition-all duration-300 card-hover">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rupee-sign text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">High Salaries</h3>
+                    <p class="text-gray-600">Salary outcomes vary by role, location, experience and employer. No salary outcome is guaranteed.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center transition-all duration-300 card-hover">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Global Opportunities</h3>
+                    <p class="text-gray-600">Graduates may explore opportunities in multiple industries and locations, subject to market demand and individual qualifications.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-center mb-6">Career Roles After Graduation</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Data Scientist</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Business Analyst</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Data Engineer</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Machine Learning Engineer</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Big Data Analyst</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Decision Scientist</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Financial Analyst</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Data Journalist</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="text-blue-800 font-medium">Database Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About VIT Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="../assets/images/vit-university.png" alt="VIT Campus" class="rounded-lg shadow-xl w-full vit-campus">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">About VIT</h2>
+                    <p class="text-gray-700 mb-4">
+                        Vellore Institute of Technology (VIT) is one of India's premier institutions, known for its commitment to delivering high-quality education aligned with global standards.
+                    </p>
+                    <p class="text-gray-700">
+                        VIT Online Education extends this legacy by offering flexible, accessible, and industry-relevant online programmes tailored for students and working professionals worldwide. These programmes are delivered through state-of-the-art digital infrastructure and taught by experienced VIT faculty, with a strong focus on emerging fields and regulatory compliance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why VIT's M.Sc. in Data Science -->
+    <section id="programme" class="py-16 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Why VIT's M.Sc. in Data Science</h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    This two-year postgraduate programme is delivered online with live sessions and recorded lectures by renowned VIT faculty.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Program Highlights</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">Online M.Sc. Data Science degree from VIT</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">UGC-entitled and DEB-recognised</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">Live online sessions + recorded content</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">Application-based learning using industry tools</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">Alumni status from VIT</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">Real-time project work across domains</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-white">Industry-focused electives such as marketing analytics, financial analytics, and big data</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Programme Overview</h3>
+                    <div class="bg-blue-800 rounded-lg p-6 mb-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-laptop text-blue-200 mr-3"></i>
+                            <h4 class="font-medium">Learning Format:</h4>
+                            <span class="ml-2">Live Online + Recorded Sessions by VIT Faculty</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="far fa-calendar-alt text-blue-200 mr-3"></i>
+                            <h4 class="font-medium">Duration:</h4>
+                            <span class="ml-2">24 Months</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="far fa-clock text-blue-200 mr-3"></i>
+                            <h4 class="font-medium">Weekly Effort:</h4>
+                            <span class="ml-2">16â€“18 hours</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-certificate text-blue-200 mr-3"></i>
+                            <h4 class="font-medium">Certificate:</h4>
+                            <span class="ml-2">VIT M.Sc. in Data Science Degree</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user-graduate text-blue-200 mr-3"></i>
+                            <h4 class="font-medium">Alumni Access:</h4>
+                            <span class="ml-2">Yes, with invitations to alumni events and VITAA access</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Curriculum Structure</h2>
+                <p class="text-l text-gray-600 max-w-3xl mx-auto">
+                    The M.Sc. in Data Science programme at VIT is designed to help learners interpret complex datasets and make data-driven decisions across industries.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-900 mb-6">Year One</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Python Programming</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Data Structures and Algorithms</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Exploratory Data Analysis</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Linear Algebra</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Probability and Distribution Models</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Forecasting and Predictive Analytics</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Statistical Inference</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Data Base Management Systems</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Data Mining</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Artificial Intelligence</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-blue-900 mb-6">Year Two</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Elective 1 - 7</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-100 rounded-full p-1 mr-4 mt-1">
+                                <i class="fas fa-book text-blue-600 text-xs"></i>
+                            </div>
+                            <p>Project Work</p>
+                        </li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-blue-900 mt-8 mb-4">Elective Options</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Big Data Analytics</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Multivariate Data Analysis</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Machine Learning</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Programming in Java</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Econometric Analysis</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Web and Social Media Analytics</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Financial Data Analytics</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Risk Analytics</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Supply Chain Analytics</p>
+                        </div>
+                        <div class="bg-blue-50 p-2 rounded">
+                            <p class="text-sm">Marketing Analytics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application-Based Learning -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Application-Based Learning</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Participants engage in real-time project work across industries
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-10">
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-building text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Real Estate</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-shopping-cart text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Retail & E-commerce</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-hospital text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Healthcare</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-landmark text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">BFSI</p>
+                </div>
+
+
+                 <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-industry text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Manufacturing</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-bolt text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Energy, Oil and Gas</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-truck-moving text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Supply Chain and Ops</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-car text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Automotive</p>
+                </div>
+ <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-plane-departure text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Tourism</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <i class="fas fa-clapperboard text-blue-600 text-2xl mb-2"></i>
+                    <p class="font-medium">Media and Entertainment</p>
+                </div>
+
+            </div>
+            
+            <h3 class="text-2xl font-semibold text-center mb-6">Example Projects</h3>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">Fraud Detection</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">Recommender System</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">Market Basket Analysis</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">Stroke Prediction</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">Predictive Maintenance</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">Sentiment Analysis</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium"> Product Quality Optimisation</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium"> Demand Forecasting</p>
+                </div>
+                   <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium"> Customer Segmentation</p>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-lg">
+                    <p class="text-blue-800 font-medium">House Price Prediction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Enroll -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Who Should Enroll</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    This programme is ideal for working professionals seeking career growth or a role transition into analytics.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800">For Professionals:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Working professionals looking for career growth</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Those seeking a role transition into analytics</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800">From Industries:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>IT, finance, healthcare sectors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Manufacturing and other industries</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-800">Career Goals:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Better compensation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Senior roles in analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Cross-industry transitions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Criteria -->
+    <section class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Eligibility Criteria</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                           <p>Candidate must be an engineering graduate with a minimum of 50% (45% for reserved categories)</p>
+                        </li>
+                        <li class="flex items-start">                            
+                            <p><b>OR</b></p>
+                        </li>
+                        <li class="flex items-start">
+                            
+                            <p>Candidates must have a bachelor's degree of at least 3 years duration in statistics, mathematics, computer science, engineering and technology from a recognised university/institution and an aggregate grade of at least 50% (45% for reserved categories).</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Fees & Payment Schedule</h3>
+                        <div class="mb-6">
+                            <p class="text-gray-700 mb-2 font-medium">Total Programme Fee:</p>
+                            <p class="text-lg font-bold text-blue-800">Confirm the current fee with VIT</p>
+                        </div>
+                        <p class="text-gray-700 mb-2">Flexible Payment & Easy EMI Payment Options Available</p>
+                        <p class="text-gray-700 text-sm">Refund Policy: As per university norms based on withdrawal timelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Experience -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Learning Experience</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The programme combines flexibility with academic rigour
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-desktop text-blue-600"></i>
+                    </div>
+                    <h3 class="text-l font-semibold mb-2">Weekly live sessions with VIT faculty for real-time interaction</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-question-circle text-blue-600"></i>
+                    </div>
+                    <h3 class="text-l font-semibold mb-2">Doubt clearing by industry professionals and subject matter experts</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-check text-blue-600"></i>
+                    </div>
+                    <h3 class="text-l font-semibold mb-2">End-term offline assessments at multiple centers across India</h3>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-video text-blue-600"></i>
+                    </div>
+                    <h3 class="text-l font-semibold mb-2">Pre-recorded, high-quality video content</h3>
+                </div>
+                <!-- <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-check text-blue-600"></i>
+                    </div>
+                    <h3 class="text-l font-semibold mb-2">Exam Centers</h3>
+                    <p class="text-gray-700">Offline end-term exams across 20+ Indian cities</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Support -->
+    <section id="careers" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Career Support</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">                
+                <div class="grid sm:grid-cols-1 gap-6 mt-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-linkedin text-blue-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-medium mb-1">LinkedIn profile building</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-file-alt text-blue-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-medium mb-1">Resume development and interview preparation</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-hands-helping text-blue-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h4 class="font-medium mb-1">Job placement assistance (available for Indian residents with 0â€“5 years experience)</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-4 bg-blue-50 rounded border border-blue-100">
+                    <p class="text-blue-800 text-sm italic">
+                        Note: VIT is not directly involved in job placement services / Career services and makes no guarantees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="admission" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">           
+            <div class="max-w-4xl mx-auto">                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Convinient Batch Options</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-bold text-blue-800 mb-2">Weekdays:</h4>
+                            <p class="text-gray-700">Monday to Friday</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-bold text-blue-800 mb-2">Weekends:</h4>
+                            <p class="text-gray-700">Saturday and Sunday</p>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-6 text-blue-800 text-sm">
+                        Please Note: The session timings for the programme may be subject to change.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Career?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto text-blue-100">
+                Advance your career in the data-driven world. Enrol in VIT's M.Sc. in Data Science to gain access to a rigorous, affordable and recognised programme tailored for professionals.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-700 font-semibold transition-colors duration-300 DownloadBrochure">
+                    Enquire Now
+                </button>
+                <button class="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-700 font-semibold transition-colors duration-300 DownloadBrochure">
+                    Speak to a Counsellor
+                </button>
+                <button class="border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-blue-700 font-semibold transition-colors duration-300 DownloadBrochure">
+                    Download Brochure
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div><h4 class="text-lg font-bold mb-4">Programmes</h4></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="../mba/">Online MBA</a></h3></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="../mca/">Online MCA</a></h3></div>
+      <div><h3 class="text-lg font mb-4"><a class="text-gray-400 hover:text-white" href="../ms-data-science/">Online M.Sc. in Data Science</a></h3></div>
+    </div>
+    <div class="border-t border-gray-800 mt-10 pt-6"><p class="text-gray-400 text-xs">Disclaimer: We are a listing platform that aggregates and displays information about various institutions and their programmes. Programme details are sourced from the respective institution and brochure. Please confirm current fees, eligibility and availability with the official university sources.</p></div>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('#mainNav .dropdown-toggle, .vit-desktop-nav .vit-dropdown-toggle, .vit-mobile-toggle').forEach(function(toggle) {
+  toggle.addEventListener('click', function() {
+    const group = toggle.closest('.nav-dropdown, .vit-nav-dropdown, .vit-mobile-nav-group');
+    if (!group) return;
+    const isOpen = group.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+const menuButton=document.getElementById('menuButton');
+const mainNav=document.getElementById('mainNav');
+if(menuButton&&mainNav){menuButton.addEventListener('click',function(){const isOpen=mainNav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));});mainNav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){mainNav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');});});}
+const mobileMenuButton=document.getElementById('vitMobileMenuButton');
+const mobileMenu=document.getElementById('vitMobileMenu');
+if(mobileMenuButton&&mobileMenu){mobileMenuButton.addEventListener('click',function(){const isOpen=mobileMenu.classList.toggle('open');mobileMenuButton.setAttribute('aria-expanded',String(isOpen));});mobileMenu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){mobileMenu.classList.remove('open');mobileMenuButton.setAttribute('aria-expanded','false');});});}
+const year=document.getElementById('year'); if(year) year.textContent=new Date().getFullYear();
+
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver(function(entries,observer){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+    });
+  },{threshold:0.08});
+  reveals.forEach(function(element){revealObserver.observe(element);});
+}else{
+  reveals.forEach(function(element){element.classList.add('visible');});
+}
+
+document.querySelectorAll('#requestForm').forEach(function(form){
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    const modal=document.getElementById('brochureModalBackdrop');
+    if(modal){
+      const firstName=modal.querySelector('#brochureFirstName');
+      const open=modal.querySelector('.brochure-modal');
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      if(firstName) firstName.focus();
+    }
+  });
+});
+</script>
+<script src="../assets/js/brochure-enquiry.js"></script>
+</body>
+</html>

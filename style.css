@@ -1,0 +1,1720 @@
+/*
+Theme Name: VIT Landing Page
+Theme URI: https://megaryse.com/
+Description: Independent MegaRyse VIT programme landing page theme.
+Version: 1.0.0
+Author: MegaRyse
+Text Domain: vit-landing-page
+*/
+
+:root {
+  --navy:#003274;
+  --navy-dark:#00285b;
+  --navy-light:#0a4a91;
+  --yellow:#F4B94F;
+  --white:#FFFFFF;
+}
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  font-family:"Trebuchet MS","Segoe UI",sans-serif;
+  color:var(--navy);
+  background:var(--white);
+  line-height:1.6;
+}
+
+body.page-leaving main,
+body.page-leaving footer {
+  opacity:0;
+  transform:translateY(8px);
+}
+
+main, footer {
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity .28s ease,transform .28s ease;
+}
+
+img { max-width:100%; display:block; }
+a { color:inherit; }
+
+.container {
+  width:min(1120px,calc(100% - 40px));
+  margin:0 auto;
+}
+
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,50,116,.97);
+  border-bottom:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);
+}
+
+section[id],main[id] { scroll-margin-top:85px; }
+
+.nav-wrap {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:24px;
+}
+
+.brand {
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+  gap:12px;
+}
+
+.brand-logo {
+  height:56px;
+  width:auto;
+  max-width:230px;
+  object-fit:contain;
+}
+
+.brand-logo.vit-brand-logo {
+  height:48px;
+  max-width:150px;
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+nav a {
+  color:var(--white);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:800;
+  transition:color .2s ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] { color:var(--yellow); }
+
+#mainNav .nav-dropdown { position:relative; display:flex; align-items:center; }
+#mainNav .dropdown-toggle {
+  position:relative;
+  border:0;
+  background:none;
+  color:var(--white);
+  font:inherit;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  padding:26px 0 22px;
+}
+#mainNav .dropdown-toggle::after {
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:15px;
+  width:24px;
+  height:2px;
+  border-radius:2px;
+  background:var(--yellow);
+  transform:scaleX(.45);
+  transform-origin:left;
+  transition:transform .2s ease;
+}
+#mainNav .nav-dropdown:hover .dropdown-toggle::after,
+#mainNav .nav-dropdown.open .dropdown-toggle::after { transform:scaleX(1); }
+#mainNav .dropdown-menu {
+  position:absolute;
+  top:calc(100% - 4px);
+  left:-16px;
+  min-width:190px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  padding:8px;
+  border-radius:8px;
+  background:var(--white);
+  box-shadow:0 14px 32px rgba(0,50,116,.2);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .18s ease,transform .18s ease,visibility .18s;
+}
+#mainNav .nav-dropdown:hover .dropdown-menu,
+#mainNav .nav-dropdown.open .dropdown-menu,
+#mainNav .nav-dropdown:focus-within .dropdown-menu {
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+#mainNav .dropdown-menu a {
+  padding:10px 12px;
+  border-radius:5px;
+  color:var(--navy);
+  font-size:13px;
+  white-space:nowrap;
+}
+#mainNav .dropdown-menu a:hover { background:#edf4fb; color:var(--navy-light); }
+
+.button {
+  min-height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 20px;
+  border:2px solid transparent;
+  border-radius:6px;
+  background:var(--yellow);
+  color:var(--navy);
+  font:inherit;
+  font-size:15px;
+  font-weight:900;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease;
+}
+
+.button:hover {
+  transform:translateY(-2px);
+  background:var(--white);
+  border-color:var(--yellow);
+}
+
+.button.secondary {
+  background:transparent;
+  color:var(--white);
+  border-color:var(--white);
+}
+
+.button.secondary:hover {
+  background:var(--white);
+  color:var(--navy);
+}
+
+.button.navy {
+  background:var(--navy);
+  color:var(--white);
+}
+
+.button.navy:hover {
+  background:var(--navy-dark);
+  border-color:var(--navy-dark);
+}
+
+.menu-button {
+  display:none;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:6px;
+  background:var(--yellow);
+  color:var(--navy);
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  color:var(--white);
+  background:
+    linear-gradient(90deg,
+      rgba(0,50,116,.98) 0%,
+      rgba(0,50,116,.88) 48%,
+      rgba(0,50,116,.28) 100%),
+    url("assets/images/vit-university.png")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  padding:100px 0 72px;
+}
+
+.eyebrow {
+  display:inline-block;
+  margin-bottom:18px;
+  color:var(--yellow);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+h1,h2,h3 { margin-top:0; line-height:1.12; }
+
+h1 {
+  max-width:650px;
+  margin-bottom:20px;
+  font-size:clamp(42px,6vw,68px);
+}
+
+h1 span { color:var(--yellow); }
+
+.hero p {
+  max-width:610px;
+  margin:0 0 30px;
+  font-size:18px;
+}
+
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* GENERAL SECTIONS */
+
+section { padding:82px 0; }
+
+.section-heading {
+  max-width:690px;
+  margin-bottom:38px;
+}
+
+.section-heading.center {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+.section-heading h2 {
+  margin-bottom:12px;
+  color:var(--navy);
+  font-size:clamp(32px,4vw,46px);
+}
+
+.section-heading p {
+  margin:0;
+  color:var(--navy-light);
+}
+
+/* PROGRAMME CARDS */
+
+.programme-grid,.benefit-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+
+.programme-card,.benefit-card {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(0,50,116,.14);
+  border-radius:10px;
+  background:var(--white);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+
+.programme-card:hover,.benefit-card:hover {
+  transform:translateY(-5px);
+  border-color:var(--yellow);
+  box-shadow:0 18px 38px rgba(0,50,116,.12);
+}
+
+.programme-card {
+  display:flex;
+  min-height:320px;
+  flex-direction:column;
+  padding:28px;
+}
+
+
+.programme-card.featured,
+.programme-card.mba-card {
+  color:var(--white);
+  background:var(--navy);
+}
+
+.programme-card.mca-card,
+.programme-card.ms-card {
+  color:var(--navy);
+  background:var(--white);
+}
+
+/* Programme card colour states */
+.programme-card.mba-card:hover,
+.programme-card.mca-card:hover,
+.programme-card.ms-card:hover {
+  background:var(--navy);
+  color:var(--white);
+  border-color:var(--yellow);
+  transform:translateY(-5px);
+  box-shadow:0 18px 38px rgba(0,50,116,.18);
+}
+
+.programme-card:hover h3,
+.programme-card:hover p {
+  color:var(--white);
+}
+
+.programme-card:hover .programme-label {
+  color:var(--yellow);
+}
+
+.programme-card:hover .button.navy {
+  background:var(--yellow);
+  color:var(--navy);
+  border-color:var(--yellow);
+}
+
+
+.programme-card.featured h3,
+.programme-card.featured p,
+.programme-card.mba-card h3,
+.programme-card.mba-card p { color:var(--white); }
+
+.programme-card.featured .programme-label,
+.programme-card.mba-card .programme-label { color:var(--yellow); }
+
+.programme-label {
+  margin-bottom:22px;
+  color:var(--navy-light);
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.programme-card h3 {
+  margin-bottom:12px;
+  color:var(--navy);
+  font-size:26px;
+}
+
+.programme-card p {
+  flex-grow:1;
+  margin:0 0 24px;
+}
+
+.programme-card .button { align-self:flex-start; }
+
+/* MEGARYSE BENEFITS */
+
+.benefits {
+  background:var(--navy);
+  color:var(--white);
+}
+
+.benefits .section-heading h2,
+.benefits .section-heading p { color:var(--white); }
+
+.benefit-card {
+  padding:26px;
+  border-color:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+}
+
+.icon-box {
+  width:48px;
+  height:48px;
+  margin-bottom:18px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--yellow);
+  color:var(--navy);
+  font-size:18px;
+  font-weight:900;
+}
+
+.benefit-card h3 { margin-bottom:8px; font-size:19px; }
+
+.benefit-card p {
+  margin:0;
+  color:var(--white);
+  font-size:15px;
+}
+
+/* PROGRAMME INFORMATION */
+
+.info-layout {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:48px;
+  align-items:start;
+}
+
+.info-layout h2 { font-size:clamp(32px,4vw,44px); }
+
+.info-table { border-top:2px solid var(--navy); }
+
+.info-row {
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(0,50,116,.14);
+}
+
+.placeholder { color:var(--navy-light); }
+
+/* ENQUIRY FORM */
+
+.enquiry-section { background:var(--navy); }
+
+.enquiry-layout {
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:50px;
+  align-items:center;
+}
+
+.enquiry-copy { color:var(--white); }
+
+.enquiry-copy h2 {
+  margin-bottom:14px;
+  font-size:clamp(32px,4vw,46px);
+}
+
+.enquiry-copy ul { padding-left:20px; }
+
+.form-wrap {
+  padding:32px;
+  border-radius:10px;
+  background:var(--white);
+  box-shadow:0 20px 50px rgba(0,0,0,.16);
+}
+
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.field.full { grid-column:1/-1; }
+
+label {
+  display:block;
+  margin-bottom:7px;
+  font-size:14px;
+  font-weight:900;
+}
+
+input,select {
+  width:100%;
+  min-height:48px;
+  padding:11px 12px;
+  border:1px solid rgba(0,50,116,.35);
+  border-radius:5px;
+  background:var(--white);
+  color:var(--navy);
+  font:inherit;
+}
+
+input:focus,select:focus {
+  outline:3px solid rgba(244,185,79,.42);
+  border-color:var(--navy);
+}
+
+fieldset { margin:0; padding:0; border:0; }
+
+legend {
+  margin-bottom:7px;
+  font-size:14px;
+  font-weight:900;
+}
+
+.radio-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.radio-row label {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-weight:700;
+}
+
+.radio-row input {
+  width:18px;
+  min-height:18px;
+}
+
+.consent {
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin-top:18px;
+}
+
+.consent input {
+  width:18px;
+  min-height:18px;
+  margin-top:2px;
+}
+
+.submit-row { margin-top:18px; }
+.submit-row .button { width:100%; }
+
+.form-message {
+  min-height:24px;
+  margin:14px 0 0;
+  font-size:14px;
+  font-weight:900;
+}
+
+/* FAQ */
+
+.faq-list { border-top:1px solid rgba(0,50,116,.18); }
+
+.faq-item { border-bottom:1px solid rgba(0,50,116,.18); }
+
+.faq-button {
+  width:100%;
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border:0;
+  background:var(--white);
+  color:var(--navy);
+  padding:18px 4px;
+  font:inherit;
+  font-size:18px;
+  font-weight:900;
+  text-align:left;
+  cursor:pointer;
+}
+
+.faq-button span:last-child {
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--yellow);
+}
+
+.faq-answer {
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .25s ease;
+}
+
+.faq-answer > div { overflow:hidden; }
+
+.faq-answer p {
+  margin:0;
+  padding:0 50px 22px 4px;
+  color:var(--navy-light);
+}
+
+.faq-item.open .faq-answer { grid-template-rows:1fr; }
+
+/* FOOTER */
+
+footer {
+  padding:48px 0 24px;
+  background:var(--navy-dark);
+  color:var(--white);
+}
+
+.footer-grid {
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  gap:36px;
+}
+
+footer .brand { color:var(--white); }
+
+footer .brand-logo {
+  height:52px;
+  max-width:210px;
+}
+
+footer h3 {
+  margin-bottom:12px;
+  color:var(--yellow);
+  font-size:15px;
+}
+
+footer p,footer a { font-size:14px; }
+
+footer nav {
+  display:grid;
+  gap:8px;
+  align-items:start;
+}
+
+footer nav a { text-decoration:none; }
+
+.footer-bottom {
+  margin-top:36px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.14);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:13px;
+}
+
+/* ENTRANCE ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* TABLET */
+
+@media(max-width:1000px) {
+  nav { gap:10px; }
+  nav a { font-size:12px; }
+  .nav-wrap { gap:12px; }
+  .brand-logo { max-width:180px; }
+}
+
+/* MOBILE NAVIGATION */
+
+@media(max-width:900px) {
+  .menu-button { display:block; flex-shrink:0; }
+
+  #mainNav {
+    position:absolute;
+    left:14px;
+    right:14px;
+    top:calc(100% + 6px);
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:12px;
+    border-radius:8px;
+    background:var(--navy);
+    box-shadow:0 16px 30px rgba(0,0,0,.2);
+  }
+
+  #mainNav.open { display:flex; }
+
+  #mainNav a:not(.button) {
+    padding:12px;
+    font-size:14px;
+    border-radius:4px;
+  }
+
+  #mainNav a:not(.button):hover {
+    background:rgba(255,255,255,.08);
+  }
+
+  #mainNav .button { width:100%; margin-top:8px; }
+  #mainNav .nav-dropdown { display:flex; flex-direction:column; align-items:stretch; }
+  #mainNav .dropdown-toggle {
+    width:100%;
+    padding:12px;
+    text-align:left;
+    font-size:14px;
+  }
+  #mainNav .dropdown-toggle::after { left:12px; bottom:7px; }
+  #mainNav .dropdown-menu {
+    position:static;
+    min-width:0;
+    max-height:0;
+    overflow:hidden;
+    padding:0 8px;
+    border-radius:4px;
+    box-shadow:none;
+    background:rgba(255,255,255,.08);
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    transition:max-height .22s ease,padding .22s ease;
+  }
+  #mainNav .nav-dropdown.open .dropdown-menu { max-height:180px; padding:6px 8px; }
+  #mainNav .dropdown-menu a { color:var(--white); padding:9px 12px; }
+
+  .programme-grid,.benefit-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .info-layout,.enquiry-layout { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:640px) {
+  .container { width:calc(100% - 28px); }
+  .nav-wrap { min-height:68px; }
+  .brand-logo { height:46px; max-width:170px; }
+  .hero { min-height:570px; }
+
+  .hero-content { padding:85px 0 55px; }
+  h1 { font-size:41px; }
+  .hero p { font-size:16px; }
+  .hero-actions .button { width:100%; }
+
+  section { padding:58px 0; }
+
+  .programme-grid,.benefit-grid { grid-template-columns:1fr; }
+  .programme-card { min-height:270px; }
+  .programme-card .button { align-self:stretch; }
+
+  .info-row { grid-template-columns:1fr; gap:4px; }
+  .form-wrap { padding:22px 18px; }
+  .form-grid { grid-template-columns:1fr; }
+  .field.full { grid-column:auto; }
+  .radio-row { flex-direction:column; gap:2px; }
+  .footer-grid { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+
+  *,*::before,*::after {
+    transition-duration:.01ms!important;
+    animation-duration:.01ms!important;
+  }
+
+  .reveal { opacity:1; transform:none; }
+
+  body.page-leaving main,
+  body.page-leaving footer {
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* Programme stylesheet */
+
+        
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+        }
+
+        h1 {
+          font-size: 16px;
+          margin-top: 0;
+        }
+
+        p {
+          color: rgb(107, 114, 128);
+          font-size: 15px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+        }
+
+        .card {
+          max-width: 620px;
+          margin: 0 auto;
+          padding: 16px;
+          border: 1px solid lightgray;
+          border-radius: 16px;
+        }
+
+        .card p:last-child {
+          margin-bottom: 0;
+        }
+
+        .gradient-bg {
+          background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+
+        .vit-hero {
+          position: relative;
+          isolation: isolate;
+          min-height: 620px;
+          overflow: hidden;
+          background-image: url("assets/images/vit-campus.jpeg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .vit-hero::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          background: rgba(55, 65, 81, 0.48);
+        }
+
+        .vit-hero > .container {
+          position: relative;
+          z-index: 1;
+        }
+
+        .vit-hero h1,
+        .vit-hero h2,
+        .vit-hero p {
+          color: #fff;
+        }
+
+        
+
+
+        .card-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .specialization-card {
+          transition: all 0.3s ease;
+        }
+
+        .input-color{
+            color: black;
+        }
+
+        .specialization-card:hover {
+          background-color: #2563eb;
+          color: white;
+        }
+
+        .timeline-item:not(:last-child):after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -30px;
+          transform: translateX(-50%);
+          width: 2px;
+          height: 30px;
+          background-color: #2563eb;
+        }
+
+        .accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+        }
+
+        .btn-loader {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+          }
+  
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            
+            color: red;
+            /* padding: 2rem; */
+        }
+  
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            color: black;
+        }
+  
+        .success-message .icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .error-block {
+            background: #fee2e2;
+            color: #b91c1c;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-container {
+            max-width: 480px;
+            min-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body.page-leaving main,
+        body.page-leaving footer { opacity: 0; transform: translateY(6px); }
+        main, footer { transition: opacity .18s ease, transform .18s ease; }
+
+        header.sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        header.sticky > div {
+            min-height: 72px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        html { scroll-behavior: smooth; }
+        .vit-page-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.08);
+        }
+        .vit-header-inner {
+            width: 100%;
+            max-width: 1280px;
+            height: 72px;
+            margin: 0 auto;
+            padding: 4px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .vit-desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            white-space: nowrap;
+        }
+        .vit-desktop-nav a {
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color .18s ease;
+        }
+        .vit-desktop-nav a:hover,
+        .vit-desktop-nav a:focus-visible { color: #1d4ed8; }
+        .vit-desktop-nav .vit-nav-dropdown { position: relative; height: 72px; display: flex; align-items: center; }
+        .vit-desktop-nav .vit-dropdown-toggle {
+            position: relative; border: 0; background: transparent; color: #1e293b;
+            font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; padding: 24px 0 20px;
+        }
+        .vit-desktop-nav .vit-dropdown-toggle::after {
+            content: ""; position: absolute; left: 0; bottom: 13px; width: 24px; height: 2px;
+            border-radius: 2px; background: #f59e0b; transform: scaleX(.45); transform-origin: left; transition: transform .2s ease;
+        }
+        .vit-desktop-nav .vit-nav-dropdown:hover .vit-dropdown-toggle::after,
+        .vit-desktop-nav .vit-nav-dropdown.open .vit-dropdown-toggle::after,
+        .vit-desktop-nav .vit-nav-dropdown:focus-within .vit-dropdown-toggle::after { transform: scaleX(1); }
+        .vit-desktop-nav .vit-dropdown-menu {
+            position: absolute; top: 62px; left: -16px; min-width: 190px; display: flex; flex-direction: column; gap: 0;
+            padding: 8px; border-radius: 8px; background: #fff; box-shadow: 0 14px 32px rgba(30,58,138,.16);
+            opacity: 0; visibility: hidden; transform: translateY(8px);
+            transition: opacity .18s ease, transform .18s ease, visibility .18s;
+        }
+        .vit-desktop-nav .vit-nav-dropdown:hover .vit-dropdown-menu,
+        .vit-desktop-nav .vit-nav-dropdown.open .vit-dropdown-menu,
+        .vit-desktop-nav .vit-nav-dropdown:focus-within .vit-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .vit-desktop-nav .vit-dropdown-menu a { padding: 10px 12px; border-radius: 5px; white-space: nowrap; font-size: 14px; }
+        .vit-desktop-nav .vit-dropdown-menu a:hover { background: #eff6ff; color: #1d4ed8; }
+        .vit-mobile-menu-button,
+        .vit-mobile-menu { display: none; }
+
+        .vit-logo {
+            height: 58px;
+            width: auto;
+            max-width: 220px;
+            margin: 0 !important;
+            object-fit: contain;
+        }
+        .vit-brand-logos {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vit-campus {
+            width: 100%;
+            height: clamp(260px, 32vw, 420px);
+            border-radius: 12px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        section[id], footer[id] {
+            scroll-margin-top: 72px;
+        }
+
+        @media (max-width: 767px) {
+            .vit-hero {
+                min-height: auto;
+                background-position: center top;
+            }
+            header.sticky > div {
+                min-height: 58px;
+            }
+            .vit-header-inner { height: 58px; padding: 4px 16px; }
+            .vit-desktop-nav { display: none; }
+            .vit-mobile-menu-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border: 0;
+                border-radius: 8px;
+                background: transparent;
+                color: #1e3a8a;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .vit-mobile-menu {
+                display: none;
+                width: 100%;
+                padding: 8px 16px 16px;
+                box-sizing: border-box;
+                background: #fff;
+                box-shadow: 0 12px 24px rgba(30, 58, 138, 0.15);
+            }
+            .vit-mobile-menu.open { display: flex; flex-direction: column; }
+            .vit-mobile-menu a {
+                padding: 10px 8px;
+                color: #1e293b;
+                font-family: Arial, sans-serif;
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+            .vit-mobile-menu .vit-mobile-nav-group { border-bottom: 1px solid #e2e8f0; }
+            .vit-mobile-menu .vit-mobile-toggle {
+                width: 100%; border: 0; background: transparent; color: #1e293b;
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 12px 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer;
+            }
+            .vit-mobile-menu .vit-mobile-toggle::after { content: "+"; color: #1d4ed8; font-size: 18px; }
+            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "âˆ’"; }
+            .vit-mobile-menu .vit-mobile-dropdown {
+                max-height: 0; overflow: hidden; display: flex; flex-direction: column;
+                padding: 0 8px; background: #f8fafc; border-radius: 6px;
+                transition: max-height .22s ease, padding .22s ease;
+            }
+            .vit-mobile-nav-group.open .vit-mobile-dropdown { max-height: 180px; padding: 6px 8px; }
+            .vit-mobile-menu .vit-mobile-dropdown a { padding: 9px 10px; font-size: 14px; }
+
+            .vit-logo {
+                height: 48px;
+                max-width: 180px;
+            }
+
+            .vit-campus {
+                height: 220px;
+            }
+
+            header.sticky nav.open {
+                position: absolute;
+                top: 58px;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 16px 16px;
+                background: white;
+                box-shadow: 0 12px 24px rgba(30, 58, 138, 0.15);
+            }
+
+            header.sticky nav.open a {
+                padding: 9px 8px;
+            }
+        }
+
+      
+/* Programme stylesheet */
+
+        body {
+	        font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+        }
+
+        h1 {
+	    font-size: 16px;
+	    margin-top: 0;
+        }
+
+        p {
+	        color: rgb(107, 114, 128);
+	        font-size: 15px;
+	        margin-bottom: 10px;
+	        margin-top: 5px;
+        }
+
+        .card {
+	        max-width: 620px;
+	        margin: 0 auto;
+	        padding: 16px;
+	        border: 1px solid lightgray;
+	        border-radius: 16px;
+        }
+
+        .card p:last-child {
+	        margin-bottom: 0;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a3a8f 0%, #4b6cb7 100%);
+        }
+        .vit-hero {
+            position: relative;
+            isolation: isolate;
+            min-height: 620px;
+            overflow: hidden;
+            background-image: url("assets/images/vit-campus.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .vit-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: rgba(55, 65, 81, 0.48);
+        }
+        .vit-hero > div {
+            position: relative;
+            z-index: 1;
+        }
+        .vit-hero h1,
+        .vit-hero h2,
+        .vit-hero p {
+            color: #fff;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .curriculum-tab.active {
+            border-bottom: 3px solid #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .specialization-chip {
+            transition: all 0.3s ease;
+        }
+        .specialization-chip:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+        .stats-card {
+            transition: all 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: scale(1.05);
+        }
+
+        .error-message {
+            
+            color: red;
+            /* padding: 2rem; */
+        }
+  
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            color: black;
+        }
+  
+        .success-message .icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .error-block {
+            background: #fee2e2;
+            color: #b91c1c;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-container {
+            max-width: 480px;
+            min-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        html { scroll-behavior: smooth; }
+        section[id], footer[id] { scroll-margin-top: 72px; }
+        nav.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+        body.page-leaving main,
+        body.page-leaving footer { opacity: 0; transform: translateY(6px); }
+        main, footer { transition: opacity .18s ease, transform .18s ease; }
+        nav.site-header > div:first-child > div {
+            height: 72px;
+        }
+        .vit-logo {
+            height: 58px;
+            width: auto;
+            max-width: 220px;
+            margin: 0 !important;
+            object-fit: contain;
+        }
+        html { scroll-behavior: smooth; }
+        .vit-page-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.08);
+        }
+        .vit-header-inner {
+            width: 100%;
+            max-width: 1280px;
+            height: 72px;
+            margin: 0 auto;
+            padding: 4px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .vit-desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            white-space: nowrap;
+        }
+        .vit-desktop-nav a {
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color .18s ease;
+        }
+        .vit-desktop-nav a:hover,
+        .vit-desktop-nav a:focus-visible { color: #1d4ed8; }
+        .vit-desktop-nav .vit-nav-dropdown { position: relative; height: 72px; display: flex; align-items: center; }
+        .vit-desktop-nav .vit-dropdown-toggle {
+            position: relative; border: 0; background: transparent; color: #1e293b;
+            font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; padding: 24px 0 20px;
+        }
+        .vit-desktop-nav .vit-dropdown-toggle::after {
+            content: ""; position: absolute; left: 0; bottom: 13px; width: 24px; height: 2px;
+            border-radius: 2px; background: #f59e0b; transform: scaleX(.45); transform-origin: left; transition: transform .2s ease;
+        }
+        .vit-desktop-nav .vit-nav-dropdown:hover .vit-dropdown-toggle::after,
+        .vit-desktop-nav .vit-nav-dropdown.open .vit-dropdown-toggle::after,
+        .vit-desktop-nav .vit-nav-dropdown:focus-within .vit-dropdown-toggle::after { transform: scaleX(1); }
+        .vit-desktop-nav .vit-dropdown-menu {
+            position: absolute; top: 62px; left: -16px; min-width: 190px; display: flex; flex-direction: column; gap: 0;
+            padding: 8px; border-radius: 8px; background: #fff; box-shadow: 0 14px 32px rgba(30,58,138,.16);
+            opacity: 0; visibility: hidden; transform: translateY(8px);
+            transition: opacity .18s ease, transform .18s ease, visibility .18s;
+        }
+        .vit-desktop-nav .vit-nav-dropdown:hover .vit-dropdown-menu,
+        .vit-desktop-nav .vit-nav-dropdown.open .vit-dropdown-menu,
+        .vit-desktop-nav .vit-nav-dropdown:focus-within .vit-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .vit-desktop-nav .vit-dropdown-menu a { padding: 10px 12px; border-radius: 5px; white-space: nowrap; font-size: 14px; }
+        .vit-desktop-nav .vit-dropdown-menu a:hover { background: #eff6ff; color: #1d4ed8; }
+        .vit-mobile-menu-button,
+        .vit-mobile-menu { display: none; }
+        .vit-campus {
+            width: 100%;
+            height: clamp(260px, 32vw, 420px);
+            border-radius: 12px;
+            object-fit: cover;
+            object-position: center;
+        }
+        @media (max-width: 767px) {
+            .vit-hero {
+                min-height: auto;
+                background-position: center top;
+            }
+            nav.site-header > div:first-child > div { height: 58px; }
+            .vit-logo { height: 48px; max-width: 180px; }
+            .vit-brand-logos {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .vit-campus { height: 220px; }
+            .vit-header-inner { height: 58px; padding: 4px 16px; }
+            .vit-desktop-nav { display: none; }
+            .vit-mobile-menu-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border: 0;
+                border-radius: 8px;
+                background: transparent;
+                color: #1e3a8a;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .vit-mobile-menu {
+                display: none;
+                width: 100%;
+                padding: 8px 16px 16px;
+                box-sizing: border-box;
+                background: #fff;
+                box-shadow: 0 12px 24px rgba(30, 58, 138, 0.15);
+            }
+            .vit-mobile-menu.open { display: flex; flex-direction: column; }
+            .vit-mobile-menu a {
+                padding: 10px 8px;
+                color: #1e293b;
+                font-family: Arial, sans-serif;
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+            .vit-mobile-menu .vit-mobile-nav-group { border-bottom: 1px solid #e2e8f0; }
+            .vit-mobile-menu .vit-mobile-toggle {
+                width: 100%; border: 0; background: transparent; color: #1e293b;
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 12px 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer;
+            }
+            .vit-mobile-menu .vit-mobile-toggle::after { content: "+"; color: #1d4ed8; font-size: 18px; }
+            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "âˆ’"; }
+            .vit-mobile-menu .vit-mobile-dropdown {
+                max-height: 0; overflow: hidden; display: flex; flex-direction: column;
+                padding: 0 8px; background: #f8fafc; border-radius: 6px;
+                transition: max-height .22s ease, padding .22s ease;
+            }
+            .vit-mobile-nav-group.open .vit-mobile-dropdown { max-height: 180px; padding: 6px 8px; }
+            .vit-mobile-menu .vit-mobile-dropdown a { padding: 9px 10px; font-size: 14px; }
+        }
+    
+/* Programme stylesheet */
+
+
+        body {
+	        font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+        }
+
+        h1 {
+	        font-size: 16px;
+	        margin-top: 0;
+        }
+
+        p {
+	        color: rgb(107, 114, 128);
+	        font-size: 15px;
+	        margin-bottom: 10px;
+	        margin-top: 5px;
+        }
+
+        .card {
+	            max-width: 620px;
+	        margin: 0 auto;
+	        padding: 16px;
+	        border: 1px solid lightgray;
+	        border-radius: 16px;
+        }
+
+        .card p:last-child {
+	        margin-bottom: 0;
+        }
+
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #4f46e5 100%);
+        }
+        .vit-hero {
+            position: relative;
+            isolation: isolate;
+            min-height: 620px;
+            overflow: hidden;
+            background-image: url("assets/images/vit-campus.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .vit-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: rgba(55, 65, 81, 0.48);
+        }
+        .vit-hero > div {
+            position: relative;
+            z-index: 1;
+        }
+        .vit-hero h1,
+        .vit-hero h2,
+        .vit-hero p {
+            color: #fff;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-item:hover .nav-item-indicator {
+            width: 100%;
+        }
+
+        .error-message {
+            
+            color: red;
+            /* padding: 2rem; */
+        }
+  
+        .success-message {
+            text-align: center;
+            padding: 2rem;
+            color: black;
+        }
+  
+        .success-message .icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .error-block {
+            background: #fee2e2;
+            color: #b91c1c;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-container {
+            max-width: 480px;
+            min-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        html { scroll-behavior: smooth; }
+        section[id], footer[id] { scroll-margin-top: 72px; }
+        nav.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+        nav.site-header > div:first-child > div { height: 72px; }
+        .vit-logo {
+            height: 58px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+        }
+        html { scroll-behavior: smooth; }
+        .vit-page-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(30, 58, 138, 0.08);
+        }
+        .vit-header-inner {
+            width: 100%;
+            max-width: 1280px;
+            height: 72px;
+            margin: 0 auto;
+            padding: 4px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .vit-desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            white-space: nowrap;
+        }
+        .vit-desktop-nav a {
+            color: #1e293b;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color .18s ease;
+        }
+        .vit-desktop-nav a:hover,
+        .vit-desktop-nav a:focus-visible { color: #1d4ed8; }
+        .vit-desktop-nav .vit-nav-dropdown { position: relative; height: 72px; display: flex; align-items: center; }
+        .vit-desktop-nav .vit-dropdown-toggle {
+            position: relative; border: 0; background: transparent; color: #1e293b;
+            font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; padding: 24px 0 20px;
+        }
+        .vit-desktop-nav .vit-dropdown-toggle::after {
+            content: ""; position: absolute; left: 0; bottom: 13px; width: 24px; height: 2px;
+            border-radius: 2px; background: #f59e0b; transform: scaleX(.45); transform-origin: left; transition: transform .2s ease;
+        }
+        .vit-desktop-nav .vit-nav-dropdown:hover .vit-dropdown-toggle::after,
+        .vit-desktop-nav .vit-nav-dropdown.open .vit-dropdown-toggle::after,
+        .vit-desktop-nav .vit-nav-dropdown:focus-within .vit-dropdown-toggle::after { transform: scaleX(1); }
+        .vit-desktop-nav .vit-dropdown-menu {
+            position: absolute; top: 62px; left: -16px; min-width: 190px; display: flex; flex-direction: column; gap: 0;
+            padding: 8px; border-radius: 8px; background: #fff; box-shadow: 0 14px 32px rgba(30,58,138,.16);
+            opacity: 0; visibility: hidden; transform: translateY(8px);
+            transition: opacity .18s ease, transform .18s ease, visibility .18s;
+        }
+        .vit-desktop-nav .vit-nav-dropdown:hover .vit-dropdown-menu,
+        .vit-desktop-nav .vit-nav-dropdown.open .vit-dropdown-menu,
+        .vit-desktop-nav .vit-nav-dropdown:focus-within .vit-dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .vit-desktop-nav .vit-dropdown-menu a { padding: 10px 12px; border-radius: 5px; white-space: nowrap; font-size: 14px; }
+        .vit-desktop-nav .vit-dropdown-menu a:hover { background: #eff6ff; color: #1d4ed8; }
+        .vit-mobile-menu-button,
+        .vit-mobile-menu { display: none; }
+        .vit-brand-logos {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .vit-campus {
+            width: 100%;
+            height: clamp(260px, 32vw, 420px);
+            border-radius: 12px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .programme-switcher {
+            width: 100%;
+            border-bottom: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+        .programme-switcher-inner {
+            width: min(1120px, calc(100% - 32px));
+            min-height: 48px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .programme-switcher a {
+            min-height: 36px;
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 14px;
+            border-radius: 999px;
+            color: #1e3a8a;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color .18s ease, color .18s ease;
+        }
+        .programme-switcher a:hover { background: #eff6ff; color: #1d4ed8; }
+        .programme-switcher a[aria-current="page"] { background: #1e3a8a; color: #ffffff; }
+        body.page-leaving,
+        body.page-leaving main,
+        body.page-leaving footer { opacity: 0; transform: translateY(6px); }
+        body, main, footer { transition: opacity .18s ease, transform .18s ease; }
+        @media (max-width: 767px) {
+            .vit-hero {
+                min-height: auto;
+                background-position: center top;
+            }
+            nav.site-header > div:first-child > div { height: 58px; }
+            .vit-logo { height: 48px; max-width: 180px; }
+            .vit-campus { height: 220px; }
+            .programme-switcher-inner { justify-content: flex-start; overflow-x: auto; }
+            .vit-header-inner { height: 58px; padding: 4px 16px; }
+            .vit-desktop-nav { display: none; }
+            .vit-mobile-menu-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border: 0;
+                border-radius: 8px;
+                background: transparent;
+                color: #1e3a8a;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .vit-mobile-menu {
+                display: none;
+                width: 100%;
+                padding: 8px 16px 16px;
+                box-sizing: border-box;
+                background: #fff;
+                box-shadow: 0 12px 24px rgba(30, 58, 138, 0.15);
+            }
+            .vit-mobile-menu.open { display: flex; flex-direction: column; }
+            .vit-mobile-menu a {
+                padding: 10px 8px;
+                color: #1e293b;
+                font-family: Arial, sans-serif;
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+            .vit-mobile-menu .vit-mobile-nav-group { border-bottom: 1px solid #e2e8f0; }
+            .vit-mobile-menu .vit-mobile-toggle {
+                width: 100%; border: 0; background: transparent; color: #1e293b;
+                display: flex; align-items: center; justify-content: space-between;
+                padding: 12px 8px; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; cursor: pointer;
+            }
+            .vit-mobile-menu .vit-mobile-toggle::after { content: "+"; color: #1d4ed8; font-size: 18px; }
+            .vit-mobile-nav-group.open .vit-mobile-toggle::after { content: "âˆ’"; }
+            .vit-mobile-menu .vit-mobile-dropdown {
+                max-height: 0; overflow: hidden; display: flex; flex-direction: column;
+                padding: 0 8px; background: #f8fafc; border-radius: 6px;
+                transition: max-height .22s ease, padding .22s ease;
+            }
+            .vit-mobile-nav-group.open .vit-mobile-dropdown { max-height: 180px; padding: 6px 8px; }
+            .vit-mobile-menu .vit-mobile-dropdown a { padding: 9px 10px; font-size: 14px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            body.page-leaving main, body.page-leaving footer {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+    
