@@ -1,77 +1,27 @@
 (function () {
     'use strict';
 
-    // =====================================================================
-    // SALESFORCE WEB-TO-LEAD SETTINGS  -  fill these in before going live
-    // =====================================================================
-    const SALESFORCE = {
-        endpoint: 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8',
-        // Org ID: Setup > Company Information > Salesforce.com Organization ID
-        // (or copy the value of the hidden "oid" field from the generated Web-to-Lead form)
-        oid: 'REPLACE_WITH_SALESFORCE_ORG_ID',
-        // Lead requires a Company value by default. Change if your org does not require it.
-        company: 'Web enquiry (VIT landing page)',
-        // Must match a value in your Lead Source picklist. Set to '' to leave blank.
-        leadSource: 'Web',
-        // Custom Lead fields: paste the field IDs (00N...) from the generated Web-to-Lead form.
-        // Leave a value as '' to skip that field.
-        customFields: {
-            programme: '',
-            work_experience: '',
-            utm_source: '',
-            utm_medium: '',
-            utm_campaign: ''
-        }
-    };
-    // =====================================================================
-
-    const programmeNames = { mba: 'MBA', mca: 'MCA', msds: 'MS Data Science' };
+    const SUBMIT_URL = '/.netlify/functions/submit-lead';
     const brochureFiles = { mba: 'mba-brochure.pdf', mca: 'mca-brochure.pdf', msds: 'msds-brochure.pdf' };
     const brochureBase = new URL('./', document.currentScript.src).href;
 
-    // Remember UTM parameters for the visit, so they survive moving from the home page to a programme page.
-    const utm = {};
-    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
-        let value = new URLSearchParams(window.location.search).get(key) || '';
+    async function submitLead(data) {
+        let response;
         try {
-            if (value) sessionStorage.setItem(key, value);
-            else value = sessionStorage.getItem(key) || '';
-        } catch (e) { /* storage unavailable */ }
-        utm[key] = value;
-    });
-
-    async function sendToSalesforce(data) {
-        if (!SALESFORCE.oid || SALESFORCE.oid.indexOf('REPLACE_') === 0) {
-            console.error('Salesforce org ID is not set in brochure-enquiry.js');
-            throw new Error('This form is not connected to Salesforce yet.');
+            response = await fetch(SUBMIT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+        } catch (error) {
+            throw new Error('Could not reach the server. Please check your connection and try again.');
         }
-        const params = new URLSearchParams();
-        params.append('oid', SALESFORCE.oid);
-        params.append('first_name', data.firstName);
-        params.append('last_name', data.lastName);
-        params.append('email', data.email);
-        params.append('mobile', data.mobile);
-        params.append('state', data.state);
-        if (SALESFORCE.company) params.append('company', SALESFORCE.company);
-        if (SALESFORCE.leadSource) params.append('lead_source', SALESFORCE.leadSource);
-        const values = {
-            programme: programmeNames[data.programme] || data.programme,
-            work_experience: data.workExperience,
-            utm_source: utm.utm_source,
-            utm_medium: utm.utm_medium,
-            utm_campaign: utm.utm_campaign
-        };
-        Object.keys(SALESFORCE.customFields).forEach(function (key) {
-            if (SALESFORCE.customFields[key]) params.append(SALESFORCE.customFields[key], values[key] || '');
-        });
-        // Salesforce does not allow cross-site reads, so the response is opaque (no-cors).
-        // A network failure still throws; a rejected lead can only be seen inside Salesforce.
-        await fetch(SALESFORCE.endpoint, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: params.toString()
-        });
+        let result = null;
+        try { result = await response.json(); } catch (error) { /* not JSON */ }
+        if (!response.ok || !result || !result.ok) {
+            throw new Error((result && result.message) || 'Submission failed. Brochure not downloaded.');
+        }
+        return result;
     }
 
     function downloadBrochure(programme) {
@@ -87,14 +37,17 @@
 
     const pageProgramme = (document.body.dataset.programme || '');
 
-    const states = [
-        'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat',
-        'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh',
-        'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan',
-        'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
-        'Delhi', 'Jammu and Kashmir', 'Ladakh', 'Chandigarh', 'Puducherry', 'Outside India', 'Other'
+    const educationOptions = [
+        ['bachelor', "Bachelor's Degree"], ['master', "Master's Degree"], ['diploma', 'Diploma'], ['other', 'Other']
     ];
-    const experienceOptions = ['Fresher', '0-1 years', '1-3 years', '3-5 years', '5-10 years', '10+ years'];
+    const experienceOptions = [
+        ['Still a Student', 'Still a Student'], ['Less than 5 Years', 'Less than 5 Years'], ['5-10 Years', '5-10 Years'],
+        ['10-15 Years', '10-15 Years'], ['16-20 Years', '16-20 Years'], ['>20 Years', '+ 20 Years']
+    ];
+    const specialisationOptions = {
+        mba: [['marketing', 'Marketing'], ['hr', 'Human Resource'], ['finance', 'Finance'], ['operations', 'Operations'], ['general', 'General']],
+        mca: [['Artificial intelligence (AI) & Machine learning', 'Artificial intelligence (AI) & Machine learning'], ['Cyber security', 'Cyber security']]
+    };
 
     const styles = document.createElement('style');
     styles.textContent = `
@@ -124,7 +77,7 @@
 
     const optionMarkup = (options, placeholder) =>
         '<option value="">' + placeholder + '</option>' +
-        options.map((option) => '<option value="' + option.replace(/"/g, '&quot;') + '">' + option + '</option>').join('');
+        options.map((option) => '<option value="' + option[0].replace(/"/g, '&quot;') + '">' + option[1].replace(/&/g, '&amp;') + '</option>').join('');
 
     document.body.insertAdjacentHTML('beforeend', `
         <div class="brochure-modal-backdrop" id="brochureModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="brochureModalTitle" aria-hidden="true">
@@ -155,9 +108,9 @@
                             <input id="brochureEmail" name="email" type="email" autocomplete="email" maxlength="254" required>
                             <p class="brochure-modal-error"></p>
                         </div>
-                        <div class="brochure-modal-field" data-field="state">
-                            <label for="brochureState">State/Province *</label>
-                            <select id="brochureState" name="state" required>${optionMarkup(states, 'Select State/Province')}</select>
+                        <div class="brochure-modal-field" data-field="education_level">
+                            <label for="brochureEducation">Education Level *</label>
+                            <select id="brochureEducation" name="education_level" required>${optionMarkup(educationOptions, 'Select Education Level')}</select>
                             <p class="brochure-modal-error"></p>
                         </div>
                         <div class="brochure-modal-field" data-field="programme">
@@ -175,8 +128,17 @@
                             <select id="brochureExperience" name="work_experience" required>${optionMarkup(experienceOptions, 'Select Work Experience')}</select>
                             <p class="brochure-modal-error"></p>
                         </div>
+                        <div class="brochure-modal-field" data-field="specialisation" id="brochureSpecialisationField" style="display:none">
+                            <label for="brochureSpecialisation">Preferred Specialisation *</label>
+                            <select id="brochureSpecialisation" name="specialisation"></select>
+                            <p class="brochure-modal-error"></p>
+                        </div>
                     </div>
-                    <label class="brochure-modal-consent" for="brochureConsent">
+                    <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                        <label for="brochureWebsite">Leave this field empty</label>
+                        <input id="brochureWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+                    <label class="brochure-modal-consent for="brochureConsent">
                         <input id="brochureConsent" name="consent" type="checkbox" required>
                         <span>I consent to be contacted by phone and/or email regarding this programme.</span>
                     </label>
@@ -194,6 +156,20 @@
     const submitButton = form.querySelector('button[type="submit"]');
     let lastFocusedElement = null;
 
+    function updateSpecialisation() {
+        const field = document.getElementById('brochureSpecialisationField');
+        const select = document.getElementById('brochureSpecialisation');
+        const options = specialisationOptions[form.programme.value];
+        if (options) {
+            select.innerHTML = optionMarkup(options, 'Select Specialisation');
+            field.style.display = '';
+        } else {
+            select.innerHTML = '';
+            field.style.display = 'none';
+        }
+    }
+    form.programme.addEventListener('change', updateSpecialisation);
+
     function openModal(event) {
         event.preventDefault();
         lastFocusedElement = document.activeElement;
@@ -203,6 +179,7 @@
         backdrop.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         if (pageProgramme) form.programme.value = pageProgramme;
+        updateSpecialisation();
         document.getElementById('brochureFirstName').focus();
     }
 
@@ -291,8 +268,8 @@
             setError('email', 'Please enter a valid email address.');
             valid = false;
         }
-        if (!form.state.value) {
-            setError('state', 'Please select your state or province.');
+        if (!form.education_level.value) {
+            setError('education_level', 'Please select your education level.');
             valid = false;
         }
         if (!form.programme.value) {
@@ -301,6 +278,10 @@
         }
         if (!form.work_experience.value) {
             setError('work_experience', 'Please select your work experience.');
+            valid = false;
+        }
+        if (specialisationOptions[form.programme.value] && !form.specialisation.value) {
+            setError('specialisation', 'Please select a specialisation.');
             valid = false;
         }
         if (!form.consent.checked) {
@@ -313,20 +294,23 @@
         submitButton.textContent = 'Submitting...';
 
         try {
-            await sendToSalesforce({
-                firstName: firstName,
-                lastName: lastName,
-                mobile: mobile,
+            const result = await submitLead({
+                fullname: firstName + ' ' + lastName,
+                phone: mobile,
                 email: email,
-                state: form.state.value,
+                educationLevel: form.education_level.value,
+                workExperience: form.work_experience.value,
                 programme: form.programme.value,
-                workExperience: form.work_experience.value
+                specialisation: form.specialisation.value,
+                website: form.website.value
             });
 
             status.className = 'brochure-modal-status success';
-            status.textContent = 'Thank you! Your enquiry has been submitted successfully. Your brochure is downloading.';
+            status.textContent = 'Thank you! Your enquiry has been submitted successfully.' +
+                (result.referenceNumber ? ' Your reference number is ' + result.referenceNumber + '.' : '') +
+                ' Your brochure is downloading.';
             downloadBrochure(form.programme.value);
-            window.setTimeout(closeModal, 1400);
+            window.setTimeout(closeModal, 4000);
         } catch (error) {
             status.className = 'brochure-modal-status';
             status.textContent = error.message || 'Submission failed. Brochure not downloaded.';
